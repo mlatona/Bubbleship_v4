@@ -14,8 +14,9 @@ public class Bubble : MonoBehaviour
 		BLUE=0,
 		RED=1,
 		PURPLE=2,
-		GREEN=3}
-	;
+		GREEN=3
+	};
+
 	public BUBBLECOLOR bubbleColor;
 	public Sprite[] typeBubbles;
 

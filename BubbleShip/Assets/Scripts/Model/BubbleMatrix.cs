@@ -94,5 +94,41 @@ public class BubbleMatrix
 		return neighbours;
 	}
 
+	public GameObject[] getNeighbours_forBomb(Bubble bubbleScript, Vector3 localPosition){
+		Vector3 rowCol = bubbleScript.rowCol;
+		//Debug.Log ("--x:"+rowCol.x+", y:"+rowCol.y);
+		GameObject[] neighbours = new GameObject[6];
+		//Left and Right
+		neighbours[0] = matrixBubble["x:"+(rowCol.x-1)+", y:"+(rowCol.y)] as GameObject;
+		//neighbours[0] = matrixBubble["x:"+(rowCol.x-2)+", y:"+(rowCol.y)] as GameObject;
+
+		neighbours[1] = matrixBubble["x:"+(rowCol.x+1)+", y:"+(rowCol.y)] as GameObject;
+		//neighbours[1] = matrixBubble["x:"+(rowCol.x+2)+", y:"+(rowCol.y)] as GameObject;
+
+		//Up and Down
+		neighbours[2] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y-1)] as GameObject;
+		//neighbours[2] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y-2)] as GameObject;
+
+		neighbours[3] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y+1)] as GameObject;
+		//neighbours[3] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y+2)] as GameObject;
+
+		if (rowCol.y % 2 == 0) {
+			//In a even row we see left
+			neighbours[4] = matrixBubble["x:"+(rowCol.x+1)+", y:"+(rowCol.y+1)] as GameObject;
+			neighbours[5] = matrixBubble["x:"+(rowCol.x+1)+", y:"+(rowCol.y-1)] as GameObject;
+		} else {
+			//In a odd row we see right
+			neighbours [4] = matrixBubble ["x:" + (rowCol.x - 1) + ", y:" + (rowCol.y + 1)] as GameObject;
+			neighbours [5] = matrixBubble ["x:" + (rowCol.x - 1) + ", y:" + (rowCol.y - 1)] as GameObject;
+		}
+		//Debug.Log (rowCol+""+neighbours[0]+"0");
+		//Debug.Log (rowCol+""+neighbours[1]+"1");
+		//Debug.Log (rowCol+""+neighbours[2]+"2");
+		//Debug.Log (rowCol+""+neighbours[3]+"3");
+		//Debug.Log (rowCol+""+neighbours[4]+"4");
+		//Debug.Log (rowCol+""+neighbours[5]+"5");
+		return neighbours;
+	}
+
 
 }
