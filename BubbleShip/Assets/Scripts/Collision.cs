@@ -40,7 +40,7 @@ public class Collision : MonoBehaviour {
 
 		if (col.gameObject.tag == "Wall") {
 
-			Debug.Log ("Pared collision--------------------------");
+			Debug.Log ("Pared - SPACESHIP colisiona con Pared ----///--- "+ col.gameObject.tag + " ----///-----");
 
 			return;
 		} // end if for collision with wall detection

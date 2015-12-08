@@ -94,6 +94,7 @@ public class BubbleMatrix
 		return neighbours;
 	}
 
+	//Richard
 	public GameObject[] getNeighbours_forBomb(Bubble bubbleScript, Vector3 localPosition){
 		Vector3 rowCol = bubbleScript.rowCol;
 		//Debug.Log ("--x:"+rowCol.x+", y:"+rowCol.y);

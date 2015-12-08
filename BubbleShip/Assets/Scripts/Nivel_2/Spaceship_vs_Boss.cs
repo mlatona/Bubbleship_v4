@@ -4,10 +4,11 @@ using System;
 using UnityEngine.UI;
 using Random=UnityEngine.Random;
 
-public class Spaceship_Nivel2 : MonoBehaviour {
+public class Spaceship_vs_Boss : MonoBehaviour {
 	
 	//velocidad
-	public Vector2 speed = new Vector2(0.8f, 0.5f);
+	//public Vector2 speed = new Vector2(0.8f, 0.5f);
+	public Vector2 speed = new Vector2(5f, 5f);
 	
 	public GameObject bubble;
 	public float timeLapsedLastFire = 0;
@@ -34,7 +35,9 @@ public class Spaceship_Nivel2 : MonoBehaviour {
 		float inputX = Input.GetAxis ("Horizontal");
 		//float inputY = Input.GetAxis ("Vertical");
 		
-		Vector3 tmp = new Vector3 (speed.x * inputX, speed.y , 0);
+		//Vector3 tmp = new Vector3 (speed.x * inputX, speed.y , 0);
+		//Vector3 tmp = new Vector3 (speed.x * inputX, 0.1f , 0);
+		Vector3 tmp = new Vector3 (speed.x * inputX, 0.1f , 0);
 		
 		Vector3 movement = tmp * Time.deltaTime;
 		transform.Translate (movement);

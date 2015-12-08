@@ -18,7 +18,7 @@ public class Wall : MonoBehaviour {
 		Bubble scriptBubble = collider.gameObject.GetComponent<Bubble> ();
 		if (scriptBubble != null && scriptBubble.playerFired) {
 			scriptBubble.direction.x *= -1;
-			Debug.Log("Pared");
+			Debug.Log("Pared - Bubble choca con pared");
 		}
 	}
 }
