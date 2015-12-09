@@ -23,7 +23,7 @@ public class Collision : MonoBehaviour {
 	}
 	
 	
-	// Methods called when there is a collision between a walls and the spaceship
+	// Methods called when there is a collision between a walls and the spaceship/boss
 	void OnCollisionEnter2D (Collision2D col){
 		Debug.Log ("Estoy en OnCollisionEnter2D" + col.gameObject.name);
 		handleCollision (col);
