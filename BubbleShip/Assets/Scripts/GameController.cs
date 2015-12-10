@@ -81,4 +81,17 @@ public class GameController{
 		}
 		return sameColor;
 	}
+	/** Destruye solo UNA Bubble
+	 *  Autor: Richard
+	 */
+	public void destroy_one_bubble(GameObject bubbleObj){
+		Bubble bubbleScript = bubbleObj.gameObject.GetComponent<Bubble> ();
+		if (bubbleScript == null)
+			return;
+		/*
+		Vector3 rowCol = bubbleScript.rowCol;
+		bubbleMatrix.remove("x:" + rowCol.x + ", y:" + rowCol.y);
+		*/
+		bubbleScript.destroy();
+	}
 }

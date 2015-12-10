@@ -24,7 +24,7 @@ public class Spaceship_Nivel2 : MonoBehaviour {
 	}
 	
 	private Bubble.BUBBLECOLOR getRandomBubbleColor(){
-		return (Bubble.BUBBLECOLOR)Random.Range(0, 4);
+		return (Bubble.BUBBLECOLOR)Random.Range(0, 8);
 	}
 	
 	
