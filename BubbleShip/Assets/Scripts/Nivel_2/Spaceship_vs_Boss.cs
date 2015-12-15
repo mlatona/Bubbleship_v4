@@ -12,7 +12,7 @@ public class Spaceship_vs_Boss : MonoBehaviour {
 	
 	public GameObject bubble;
 	public float timeLapsedLastFire = 0;
-	private Bubble.BUBBLECOLOR actualBubble, nextBubble;
+	private Enums.BUBBLECOLOR actualBubble, nextBubble;
 	Bubble bScript;
 	
 	void Awake(){
@@ -23,8 +23,8 @@ public class Spaceship_vs_Boss : MonoBehaviour {
 		updateBubbles ();
 	}
 	
-	private Bubble.BUBBLECOLOR getRandomBubbleColor(){
-		return (Bubble.BUBBLECOLOR)Random.Range(0, 8);
+	private Enums.BUBBLECOLOR getRandomBubbleColor(){
+		return (Enums.BUBBLECOLOR)Random.Range(0, 8);
 	}
 	
 	

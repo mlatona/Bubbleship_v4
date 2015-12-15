@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bubble : MonoBehaviour, IBubbleMatrix
+public class BubbleObj : MonoBehaviour, ICollisionable, IBubbleMatrix
 {
-
-	public int damage = 1;
+	
 	public bool isEnemy = false;
 	public bool playerFired = false, oneContact=false;
 	public Vector3 speed, direction, rowCol;
@@ -24,6 +23,7 @@ public class Bubble : MonoBehaviour, IBubbleMatrix
 	}
 
 	public void changeColor(int bubbleCol){
+		Debug.Log ("BubbleObj: "+bubbleCol);
 		GetComponent<SpriteRenderer> ().sprite = typeBubbles [bubbleCol];
 	}
 
@@ -43,15 +43,15 @@ public class Bubble : MonoBehaviour, IBubbleMatrix
 	// Update is called once per frame
 	void Update ()
 	{
-		Vector3 movement = new Vector3 (speed.x * direction.x, speed.y * direction.y, 0);
-		movement *= Time.deltaTime;
-			
-		transform.Translate (movement);
+
 	}
 
-	void OnTriggerEnter2D (Collider2D collider)
-	{
-		Bubble scriptBubble = collider.gameObject.GetComponent<Bubble> ();
+	/**
+	 * Implements ICollisionable
+	 * We can attend there a collision, it is depending the object that collided
+	 */
+	public void CollideWithBubble(GameObject collideObject){
+		Bubble scriptBubble = collideObject.GetComponent<Bubble> ();
 		if (scriptBubble != null && scriptBubble.playerFired) {
 			scriptBubble.speed = new Vector3 (0, 0, 0);
 			//Debug.Log(scriptBubble.playerFired);
@@ -60,18 +60,16 @@ public class Bubble : MonoBehaviour, IBubbleMatrix
 						(collider.gameObject.transform.localPosition, true);
 */
 			//insert bubble
-			gameController.insert (collider.gameObject, true);
-
-			gameController.destroyBubbles (collider.gameObject);
-
+			gameController.insert (collideObject, true);
+			
+			gameController.destroyBubbles (collideObject);
+			
 			//Detener
 			scriptBubble.playerFired = false;
 		}
 	}
-
-	public void destroy(){
-		Destroy (gameObject);
-	}
+	public void CollideWithSpaceShip(GameObject collideObject){}
+	public void CollideWithWall(GameObject collideObject){}
 
 	/**
 	 * Implements IBubbleMatrix, because it wants to be in the matrix
@@ -82,4 +80,5 @@ public class Bubble : MonoBehaviour, IBubbleMatrix
 	
 	public Enums.BUBBLECOLOR GetBubbleColor(){return bubbleColor;}
 	public void SetBubbleColor(Enums.BUBBLECOLOR bubbleColorParam){bubbleColor = bubbleColorParam;}
+
 }

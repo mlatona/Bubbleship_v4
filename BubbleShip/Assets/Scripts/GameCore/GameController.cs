@@ -31,8 +31,8 @@ public class GameController{
 	public void destroyBubbles(GameObject bubbleObj){
 		//get neighbours and destroy if its necesary
 		Hashtable sameColorConeectedBubbles = new Hashtable ();
-		Bubble bubbleScript = bubbleObj.gameObject.GetComponent<Bubble> ();
-		Vector3 rowCol = bubbleScript.rowCol;
+		IBubbleMatrix bubbleScript = bubbleObj.gameObject.GetComponent<IBubbleMatrix> ();
+		Vector3 rowCol = bubbleScript.GetRowCol();
 		sameColorConeectedBubbles.Add ("x:" + rowCol.x + ", y:" + rowCol.y, bubbleObj);
 		int sameColor = 1 + destroyBubbles 
 			(sameColorConeectedBubbles, bubbleMatrix.getNeighbours (bubbleScript, bubbleObj.transform.localPosition), bubbleObj);
@@ -67,10 +67,10 @@ public class GameController{
 				continue;
 			}
 			//Debug.Log(neighbour.transform.localPosition+"neightbour:_"+parentBubbleObj.transform.localPosition);	
-			Bubble neighbourBubble = neighbour.gameObject.GetComponent<Bubble> ();
-			Bubble parentBubble = parentBubbleObj.gameObject.GetComponent<Bubble> ();
-			Vector3 rowCol = neighbourBubble.rowCol;
-			if (neighbourBubble.bubbleColor == parentBubble.bubbleColor
+			IBubbleMatrix neighbourBubble = neighbour.gameObject.GetComponent<IBubbleMatrix> ();
+			IBubbleMatrix parentBubble = parentBubbleObj.gameObject.GetComponent<IBubbleMatrix> ();
+			Vector3 rowCol = neighbourBubble.GetRowCol();
+			if (neighbourBubble.GetBubbleColor() == parentBubble.GetBubbleColor()
 			    && !list.ContainsKey("x:" + rowCol.x + ", y:" + rowCol.y)) {
 
 				list.Add("x:" + rowCol.x + ", y:" + rowCol.y,neighbour);

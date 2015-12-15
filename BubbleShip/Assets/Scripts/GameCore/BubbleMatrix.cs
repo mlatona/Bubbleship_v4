@@ -51,13 +51,13 @@ public class BubbleMatrix
 			}
 		}
 
-		Bubble bubbleScript = bubbleObj.GetComponent<Bubble> ();
-		bubbleScript.rowCol = rowCol;
+		IBubbleMatrix bubbleScript = bubbleObj.GetComponent<IBubbleMatrix> ();
+		bubbleScript.SetRowCol(rowCol);
 		if (!matrixBubble.ContainsKey ("x:" + rowCol.x + ", y:" + rowCol.y)) {
 			matrixBubble.Add ("x:" + rowCol.x + ", y:" + rowCol.y, bubbleObj);
 		}
 		bubbleObj.transform.localPosition = 
-			moveToCorrectPosition (bubbleObj.transform.localPosition, bubbleScript.rowCol);
+			moveToCorrectPosition (bubbleObj.transform.localPosition, bubbleScript.GetRowCol());
 		
 		//Debug.Log ("INSERT: x:"+rowCol.x+", y:"+rowCol.y);
 	}
@@ -66,8 +66,8 @@ public class BubbleMatrix
 		matrixBubble.Remove (key);
 	}
 
-	public GameObject[] getNeighbours(Bubble bubbleScript, Vector3 localPosition){
-		Vector3 rowCol = bubbleScript.rowCol;
+	public GameObject[] getNeighbours(IBubbleMatrix bubbleScript, Vector3 localPosition){
+		Vector3 rowCol = bubbleScript.GetRowCol();
 		//Debug.Log ("--x:"+rowCol.x+", y:"+rowCol.y);
 		GameObject[] neighbours = new GameObject[6];
 		//Left and Right
@@ -95,8 +95,8 @@ public class BubbleMatrix
 	}
 
 	//Richard
-	public GameObject[] getNeighbours_forBomb(Bubble bubbleScript, Vector3 localPosition){
-		Vector3 rowCol = bubbleScript.rowCol;
+	public GameObject[] getNeighbours_forBomb(IBubbleMatrix bubbleScript, Vector3 localPosition){
+		Vector3 rowCol = bubbleScript.GetRowCol();
 		//Debug.Log ("--x:"+rowCol.x+", y:"+rowCol.y);
 		GameObject[] neighbours = new GameObject[6];
 		//Left and Right
