@@ -8,7 +8,16 @@ public class DamageCollide : MonoBehaviour,ICollideCommand {
 	#region ICommand implementation
 	public void Run ()
 	{
-		GetComponent<IDamageable> ().Damage (collider2d.GetComponent<IDamageable>().GetDamageTaken());
+		//Si es mia no me hace daño
+		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
+		IOwner owner = GetComponent<IOwner> ();
+		//Ambos son cosas distintas de poseidas
+		if ((owner == null && otherOwner == null)
+		//Una es poseida y le pertenece
+			|| (!(owner != null && owner.Get()!=null && owner.Get ().tag == collider2d.tag)
+		    && !(otherOwner != null && otherOwner.Get()!=null && otherOwner.Get ().tag == tag))) {
+			GetComponent<IDamageable> ().Damage (collider2d.GetComponent<IDamageable> ().GetDamageTaken ());
+		}
 	}
 	#endregion
 

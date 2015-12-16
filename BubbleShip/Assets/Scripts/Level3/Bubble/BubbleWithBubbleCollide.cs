@@ -15,10 +15,13 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 	{
 		IMoveable moveable = GetComponent<IMoveable> ();
 		IOwner owner = GetComponent<IOwner> ();
-		if (moveable != null && owner.Get()!=null) {
-			Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
+		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
+		if (owner.Get ()!=null 
+		    && otherOwner.Get ()==null) {
+			//Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
 			moveable.SetSpeed(Vector3.zero);
 			gameController.insert (gameObject, true);
+			owner.Set(null);
 			gameController.destroyBubbles (gameObject);
 		}
 	}
