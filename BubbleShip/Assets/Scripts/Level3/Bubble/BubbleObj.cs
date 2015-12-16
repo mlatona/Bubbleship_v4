@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BubbleObj : MonoBehaviour, IBubbleMatrix
+public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 {
 
 	public Vector3 rowCol;
 	GameController gameController;
+	GameObject owner;
 
 	public Enums.BUBBLECOLOR bubbleColor;
 	public Sprite[] typeBubbles;
@@ -23,18 +24,28 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 	// Use this for initialization
 	void Start ()
 	{
+		if (owner == null) {
 			gameController.insert (gameObject, false);
+		}
 	}
 
 
-	/**
-	 * Implements IBubbleMatrix, because it wants to be in the matrix
-	 * 
-	 * */
+	#region IBubbleMatrix implementation
 	public Vector3 GetRowCol(){ return rowCol;}
 	public void SetRowCol(Vector3 rowColParam){rowCol = rowColParam;}
 	
 	public Enums.BUBBLECOLOR GetBubbleColor(){return bubbleColor;}
 	public void SetBubbleColor(Enums.BUBBLECOLOR bubbleColorParam){bubbleColor = bubbleColorParam;}
+	#endregion
 
+	#region IParam implementation
+	public void Set (GameObject t)
+	{
+		owner = t;
+	}
+	public GameObject Get ()
+	{
+		return owner;
+	}
+	#endregion
 }

@@ -51,12 +51,13 @@ public class GameController{
 	}
 
 	public void destroy(GameObject bubbleObj){
-		Bubble bubbleScript = bubbleObj.gameObject.GetComponent<Bubble> ();
-		if (bubbleScript == null)
+		IKillable killable = bubbleObj.gameObject.GetComponent<IKillable> ();
+		IBubbleMatrix bubbleOnMatrix = bubbleObj.gameObject.GetComponent<IBubbleMatrix> ();
+		if (bubbleOnMatrix == null)
 			return;
-		Vector3 rowCol = bubbleScript.rowCol;
+		Vector3 rowCol = bubbleOnMatrix.GetRowCol();
 		bubbleMatrix.remove("x:" + rowCol.x + ", y:" + rowCol.y);
-		bubbleScript.destroy();
+		killable.Kill();
 	}
 
 	private int destroyBubbles(Hashtable list, GameObject[] neighbours, GameObject parentBubbleObj){

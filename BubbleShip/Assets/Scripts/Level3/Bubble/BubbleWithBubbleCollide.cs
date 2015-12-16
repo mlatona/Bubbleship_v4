@@ -14,7 +14,9 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 	public void Run ()
 	{
 		IMoveable moveable = GetComponent<IMoveable> ();
-		if (moveable != null) {
+		IOwner owner = GetComponent<IOwner> ();
+		if (moveable != null && owner.Get()!=null) {
+			Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
 			moveable.SetSpeed(Vector3.zero);
 			gameController.insert (gameObject, true);
 			gameController.destroyBubbles (gameObject);

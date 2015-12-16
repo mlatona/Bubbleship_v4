@@ -10,7 +10,6 @@ public interface IMoveable
 {
 	void SetSpeed(Vector3 speedParam);
 	Vector3 GetSpeed();
-	void SetCanMove(bool canMoveParam);
 }
 
 public interface ICommand
@@ -19,6 +18,10 @@ public interface ICommand
 }
 
 public interface ICollideCommand : IParam<Collider2D>,ICommand{
+
+}
+
+public interface IOwner : IParam<GameObject>{
 
 }
 
