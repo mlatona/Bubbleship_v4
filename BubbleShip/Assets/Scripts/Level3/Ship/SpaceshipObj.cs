@@ -4,7 +4,7 @@ using System;
 using UnityEngine.UI;
 using Random=UnityEngine.Random;
 
-public class SpaceshipObj : MonoBehaviour, ICollisionable {
+public class SpaceshipObj : MonoBehaviour {
 
 	//public GameObject bubble;
 	public float timeLapsedLastFire = 0;
@@ -84,10 +84,4 @@ public class SpaceshipObj : MonoBehaviour, ICollisionable {
 			.GetComponent<SpriteRenderer> ().sprite = bScript.typeBubbles[(int)nextBubble];
 	}*/
 
-	#region ICollisionable implementation
-	void ICollisionable.CollideWithBubble (GameObject collideObject){
-		GetComponent<IDamageable> ().Damage (collideObject.GetComponent<IDamageable>().GetDamageTaken());
-	}
-	void ICollisionable.CollideWithSpaceShip (GameObject collideObject){}
-	#endregion
 }

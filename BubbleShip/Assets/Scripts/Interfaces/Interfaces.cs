@@ -18,17 +18,20 @@ public interface ICommand
 	void Run();
 }
 
+public interface ICollideCommand : IParam<Collider2D>,ICommand{
+
+}
+
+public interface IParam<T>
+{
+	void Set(T t);
+	T Get();
+}
+
 public interface IDamageable
 {
 	void Damage(int damageTaken);
 	int GetDamageTaken();
-}
-
-public interface ICollisionable
-{
-	void CollideWithBubble(GameObject collideObject);
-	void CollideWithSpaceShip(GameObject collideObject);
-
 }
 
 public interface IBubbleMatrix
