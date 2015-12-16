@@ -14,7 +14,7 @@ public class KeyboardEvent : MonoBehaviour
 	void Update ()
 	{
 		timeElapsed += Time.deltaTime;
-		if (timeElapsed > timeBetweenEvents) {
+		if (timeElapsed >= timeBetweenEvents) {
 			if (Input.GetButton (eventname)) {
 				ICommand command = (ICommand)gameObject.GetComponent (commandOn);
 				if (command != null) {

@@ -7,6 +7,7 @@ public class GameController{
 	public static GameController _instance = null;
 
 	BubbleMatrix bubbleMatrix;
+	public bool paused = false;
 
 	public static GameController Instance() { 
 		

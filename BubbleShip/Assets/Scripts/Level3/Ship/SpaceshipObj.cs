@@ -7,7 +7,7 @@ using Random=UnityEngine.Random;
 public class SpaceshipObj : MonoBehaviour {
 
 	//public GameObject bubble;
-	public float timeLapsedLastFire = 0;
+	//public float timeLapsedLastFire = 0;
 	//private Enums.BUBBLECOLOR actualBubble, nextBubble;
 	//Bubble bScript;
 
@@ -39,15 +39,15 @@ public class SpaceshipObj : MonoBehaviour {
 		//movement.x = 0;
 		//Camera.main.transform.Translate(movement);
 
-		timeLapsedLastFire += Time.deltaTime;
-		bool fire = Input.GetButton ("Fire1");
-		if (fire && timeLapsedLastFire>0.5) {
+		//timeLapsedLastFire += Time.deltaTime;
+		//bool fire = Input.GetButton ("Fire1");
+		//if (fire && timeLapsedLastFire>0.5) {
 
-			timeLapsedLastFire = 0;
+		//	timeLapsedLastFire = 0;
 
 			//bScript.playerFired = true;
-			Vector3 mousePos = Input.mousePosition;
-			mousePos.z = 59;
+			//Vector3 mousePos = Input.mousePosition;
+			//mousePos.z = 59;
 			//Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
 			//Debug.Log("World:"+worldMousePosition+"Mouse:"+Input.mousePosition);
 
@@ -73,7 +73,7 @@ public class SpaceshipObj : MonoBehaviour {
 			//actualBubble = nextBubble;
 			//nextBubble = getRandomBubbleColor();
 			//updateBubbles();
-		}
+		//}
 
 	}
 
