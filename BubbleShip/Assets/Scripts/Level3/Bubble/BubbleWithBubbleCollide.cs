@@ -18,9 +18,10 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
 		if (owner.Get ()!=null 
 		    && otherOwner.Get ()==null) {
-			Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
+			//Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
 			moveable.SetSpeed(Vector3.zero);
 			gameController.insert (gameObject, true);
+			owner.Set(null);
 			gameController.destroyBubbles (gameObject);
 		}
 	}
