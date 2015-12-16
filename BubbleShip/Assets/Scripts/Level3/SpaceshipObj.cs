@@ -4,19 +4,19 @@ using System;
 using UnityEngine.UI;
 using Random=UnityEngine.Random;
 
-public class SpaceshipObj : MonoBehaviour {
+public class SpaceshipObj : MonoBehaviour, ICollisionable {
 
-	public GameObject bubble;
+	//public GameObject bubble;
 	public float timeLapsedLastFire = 0;
-	private Enums.BUBBLECOLOR actualBubble, nextBubble;
-	Bubble bScript;
+	//private Enums.BUBBLECOLOR actualBubble, nextBubble;
+	//Bubble bScript;
 
 	void Awake(){
 
-		bScript = bubble.GetComponent<Bubble> ();
-		actualBubble = getRandomBubbleColor();
-		nextBubble = getRandomBubbleColor();
-		updateBubbles ();
+		//bScript = bubble.GetComponent<Bubble> ();
+		//actualBubble = getRandomBubbleColor();
+		//nextBubble = getRandomBubbleColor();
+		//updateBubbles ();
 	}
 
 	private Enums.BUBBLECOLOR getRandomBubbleColor(){
@@ -45,42 +45,49 @@ public class SpaceshipObj : MonoBehaviour {
 
 			timeLapsedLastFire = 0;
 
-			bScript.playerFired = true;
+			//bScript.playerFired = true;
 			Vector3 mousePos = Input.mousePosition;
 			mousePos.z = 59;
-			Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
+			//Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
 			//Debug.Log("World:"+worldMousePosition+"Mouse:"+Input.mousePosition);
 
-			Vector3 direction = worldMousePosition - (transform.position + new Vector3(0,1,0));
+			//Vector3 direction = worldMousePosition - (transform.position + new Vector3(0,1,0));
 			//float angle = Mathf.Atan2(direction.y, direction.x);
 
 			//Debug.Log(""+direction);
-			bScript.speed = direction;
-			bScript.bubbleColor = actualBubble;
+			//bScript.speed = direction;
+			//bScript.bubbleColor = actualBubble;
 
-			GameObject b = Instantiate(bubble, transform.position+ new Vector3(0,(float) 1.8,0), transform.rotation) as GameObject;
+			//GameObject b = Instantiate(bubble, transform.position+ new Vector3(0,(float) 1.8,0), transform.rotation) as GameObject;
 
 			//ShootedBubble shootedBubble = new ShootedBubble(direction);
 
 
-			b.AddComponent<CircleCollider2D>();
+			//b.AddComponent<CircleCollider2D>();
 
 			//ShootedBubble shootedBubble = b.AddComponent<ShootedBubble>();
 			//shootedBubble.SettingDirection(direction);
 
-			b.transform.parent = transform.parent;
+			//b.transform.parent = transform.parent;
 
-			actualBubble = nextBubble;
-			nextBubble = getRandomBubbleColor();
-			updateBubbles();
+			//actualBubble = nextBubble;
+			//nextBubble = getRandomBubbleColor();
+			//updateBubbles();
 		}
 
 	}
 
-	void updateBubbles(){ 
+	/*void updateBubbles(){ 
 		GameObject.FindGameObjectWithTag("ActualBubble")
 			.GetComponent<SpriteRenderer> ().sprite = bScript.typeBubbles[(int)actualBubble];
 		GameObject.FindGameObjectWithTag("NextBubble")
 			.GetComponent<SpriteRenderer> ().sprite = bScript.typeBubbles[(int)nextBubble];
+	}*/
+
+	#region ICollisionable implementation
+	void ICollisionable.CollideWithBubble (GameObject collideObject){
+		GetComponent<IDamageable> ().Damage (collideObject.GetComponent<IDamageable>().GetDamageTaken());
 	}
+	void ICollisionable.CollideWithSpaceShip (GameObject collideObject){}
+	#endregion
 }

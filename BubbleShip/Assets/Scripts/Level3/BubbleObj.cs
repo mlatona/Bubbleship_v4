@@ -23,7 +23,6 @@ public class BubbleObj : MonoBehaviour, ICollisionable, IBubbleMatrix
 	}
 
 	public void changeColor(int bubbleCol){
-		Debug.Log ("BubbleObj: "+bubbleCol);
 		GetComponent<SpriteRenderer> ().sprite = typeBubbles [bubbleCol];
 	}
 
@@ -51,25 +50,16 @@ public class BubbleObj : MonoBehaviour, ICollisionable, IBubbleMatrix
 	 * We can attend there a collision, it is depending the object that collided
 	 */
 	public void CollideWithBubble(GameObject collideObject){
-		Bubble scriptBubble = collideObject.GetComponent<Bubble> ();
-		if (scriptBubble != null && scriptBubble.playerFired) {
-			scriptBubble.speed = new Vector3 (0, 0, 0);
-			//Debug.Log(scriptBubble.playerFired);
-			/*collider.gameObject.transform.localPosition
-					= gameController.moveToCorrectPosition
-						(collider.gameObject.transform.localPosition, true);
-*/
-			//insert bubble
-			gameController.insert (collideObject, true);
-			
-			gameController.destroyBubbles (collideObject);
-			
-			//Detener
-			scriptBubble.playerFired = false;
+		IMoveable moveable = GetComponent<IMoveable> ();
+		if (moveable != null) {
+			moveable.SetSpeed(Vector3.zero);
+			gameController.insert (gameObject, true);
+			gameController.destroyBubbles (gameObject);
 		}
 	}
-	public void CollideWithSpaceShip(GameObject collideObject){}
-	public void CollideWithWall(GameObject collideObject){}
+	public void CollideWithSpaceShip(GameObject collideObject){
+		GetComponent<IDamageable> ().Damage (collideObject.GetComponent<IDamageable>().GetDamageTaken());
+	}
 
 	/**
 	 * Implements IBubbleMatrix, because it wants to be in the matrix

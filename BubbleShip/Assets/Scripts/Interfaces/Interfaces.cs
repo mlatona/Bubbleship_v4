@@ -8,7 +8,9 @@ public interface IKillable
 
 public interface IMoveable
 {
-	void Move();
+	void SetSpeed(Vector3 speedParam);
+	Vector3 GetSpeed();
+	void SetCanMove(bool canMoveParam);
 }
 
 public interface ICommand
@@ -19,13 +21,14 @@ public interface ICommand
 public interface IDamageable
 {
 	void Damage(int damageTaken);
+	int GetDamageTaken();
 }
 
 public interface ICollisionable
 {
 	void CollideWithBubble(GameObject collideObject);
 	void CollideWithSpaceShip(GameObject collideObject);
-	void CollideWithWall(GameObject collideObject);
+
 }
 
 public interface IBubbleMatrix

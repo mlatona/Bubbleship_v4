@@ -14,4 +14,6 @@ public class Damageable : MonoBehaviour, IDamageable{
 			killable.Kill();
 		}
 	}
+
+	public int GetDamageTaken(){ return damage;}
 }
