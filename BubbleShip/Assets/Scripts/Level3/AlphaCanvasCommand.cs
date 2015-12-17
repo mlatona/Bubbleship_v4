@@ -10,6 +10,8 @@ public class AlphaCanvasCommand : MonoBehaviour, ICommand {
 	public void Run ()
 	{
 		canvas.alpha = 1;
+		canvas.interactable = true;
+		canvas.blocksRaycasts = true;
 	}
 
 	#endregion

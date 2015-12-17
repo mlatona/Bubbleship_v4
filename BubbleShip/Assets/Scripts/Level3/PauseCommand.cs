@@ -18,11 +18,15 @@ public class PauseCommand : MonoBehaviour, ICommand {
 		if (gameController.paused) {
 			Time.timeScale = 1;
 			panelPausa.alpha = 0;
+			panelPausa.interactable = false;
+			panelPausa.blocksRaycasts = false;
 			gameController.paused = false;
 		} else {
 			Time.timeScale = 0;
 			panelPausa.alpha = 1;
 			gameController.paused = true;
+			panelPausa.interactable = true;
+			panelPausa.blocksRaycasts = true;
 		}
 	}
 
