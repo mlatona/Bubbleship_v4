@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class PauseCommand : MonoBehaviour, ICommand {
 
 	GameController gameController;
-	CanvasGroup panelPausa;
+	public CanvasGroup panelPausa;
 
 	void Start(){
 		gameController = GameController.Instance ();
-		panelPausa = GameObject.Find ("PanelPausa").GetComponent<CanvasGroup>();
+		//panelPausa = GameObject.Find ("PanelPausa").GetComponent<CanvasGroup>();
 	}
 
 	#region ICommand implementation
@@ -18,11 +18,12 @@ public class PauseCommand : MonoBehaviour, ICommand {
 		if (gameController.paused) {
 			Time.timeScale = 1;
 			panelPausa.alpha = 0;
+			gameController.paused = false;
 		} else {
 			Time.timeScale = 0;
 			panelPausa.alpha = 1;
+			gameController.paused = true;
 		}
-		gameController.paused = !gameController.paused;
 	}
 
 	#endregion
