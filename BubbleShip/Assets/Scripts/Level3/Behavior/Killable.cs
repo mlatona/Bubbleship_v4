@@ -16,6 +16,7 @@ public class Killable : MonoBehaviour, IKillable {
 		//kill
 		Destroy (gameObject);
 		if(callback != null){
+			Debug.Log("Killed "+gameObject.tag);
 			((ICommand)callback).Run();
 		}
 	}

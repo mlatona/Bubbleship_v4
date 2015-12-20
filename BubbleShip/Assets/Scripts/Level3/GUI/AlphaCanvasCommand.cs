@@ -9,6 +9,7 @@ public class AlphaCanvasCommand : MonoBehaviour, ICommand {
 
 	public void Run ()
 	{
+		Debug.Log ("AlphasCanvasCommand");
 		canvas.alpha = 1;
 		canvas.interactable = true;
 		canvas.blocksRaycasts = true;

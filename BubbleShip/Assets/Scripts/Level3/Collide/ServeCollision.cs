@@ -29,6 +29,7 @@ public class ServeCollision : MonoBehaviour
 
 	void AttendCollision (Collider2D collider)
 	{
+		Debug.Log (collider.name);
 		Debug.Log ("ServeCollision yo=" + gameObject.tag + " el=" + collider.gameObject.tag);
 		string objICollide = (string)tagCommand [collider.gameObject.tag];
 		if(objICollide != null){

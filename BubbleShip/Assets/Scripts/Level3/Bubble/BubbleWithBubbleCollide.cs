@@ -5,24 +5,34 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 	
 	Collider2D collider2d;
 	GameController gameController;
+	IOwner owner;
+	IDamageable damageable;
 
 	public void Start(){
 		gameController = GameController.Instance ();
+		damageable = gameObject.GetComponent<IDamageable>();
+		owner = GetComponent<IOwner> ();
 	}
 	
 	#region ICommand implementation
 	public void Run ()
 	{
 		IMoveable moveable = GetComponent<IMoveable> ();
-		IOwner owner = GetComponent<IOwner> ();
+
 		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
-		if (owner.Get ()!=null 
-		    && otherOwner.Get ()==null) {
+		//Bola que impacta con grupo de bolas
+		if (owner.Get () != null 
+			&& otherOwner.Get () == null) {
 			//Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
-			moveable.SetSpeed(Vector3.zero);
+			moveable.SetSpeed (Vector3.zero);
 			gameController.insert (gameObject, true);
-			owner.Set(null);
+			owner.Set (null);
 			gameController.destroyBubbles (gameObject);
+		} 
+		//Bubble enemy that imact with bubble Ship
+		else if(owner.Get () != null 
+		        && otherOwner.Get () != null && owner.Get ().gameObject.tag!=otherOwner.Get ().gameObject.tag){
+			damageable.Damage(otherOwner.Get ().gameObject.GetComponent<IDamageable>().GetDamageTaken());
 		}
 	}
 	#endregion

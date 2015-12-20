@@ -25,6 +25,11 @@ public interface IOwner : IParam<GameObject>{
 
 }
 
+public interface IState{
+	void updateState();
+	IState changeState();
+}
+
 public interface IParam<T>
 {
 	void Set(T t);
