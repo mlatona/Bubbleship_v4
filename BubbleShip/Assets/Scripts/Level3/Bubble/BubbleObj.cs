@@ -7,18 +7,20 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 	public Vector3 rowCol;
 	GameController gameController;
 	GameObject owner;
+	Animator animator;
 
 	public Enums.BUBBLECOLOR bubbleColor;
-	public Sprite[] typeBubbles;
 
 	void Awake ()
 	{
+		
+		animator = GetComponent<Animator>();
 		changeColor ((int)bubbleColor);
 		gameController = GameController.Instance ();
 	}
 
-	public void changeColor(int bubbleCol){
-		GetComponent<SpriteRenderer> ().sprite = typeBubbles [bubbleCol];
+	public void changeColor(int bubbleColorParam){
+		animator.SetInteger("color",bubbleColorParam);
 	}
 
 	// Use this for initialization

@@ -6,6 +6,10 @@ public interface IKillable
 	void Kill();
 }
 
+public interface IScoreable{
+	void Score();
+}
+
 public interface IMoveable
 {
 	void SetSpeed(Vector3 speedParam);

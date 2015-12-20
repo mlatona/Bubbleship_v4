@@ -8,6 +8,7 @@ public class GameController{
 
 	BubbleMatrix bubbleMatrix;
 	public bool paused = false;
+	int totalScore;
 
 	public static GameController Instance() { 
 		
@@ -22,6 +23,7 @@ public class GameController{
 	public GameController() {
 		Debug.Log("Starts GameController ");
 		bubbleMatrix = new BubbleMatrix ();
+		totalScore = 0;
 	}
 
 	public void insert (GameObject bubbleObj, bool substract)
@@ -95,5 +97,13 @@ public class GameController{
 		bubbleMatrix.remove("x:" + rowCol.x + ", y:" + rowCol.y);
 		*/
 		bubbleScript.destroy();
+	}
+
+	public void Score(int scoreParam){
+		totalScore += scoreParam;
+	}
+
+	public int GetTotalScore(){
+		return totalScore;
 	}
 }
