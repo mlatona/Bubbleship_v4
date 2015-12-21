@@ -23,14 +23,13 @@ public class Moveable : MonoBehaviour, IMoveable
 	void Update ()
 	{
 		Vector3 movement = speed * Time.deltaTime;
-		transform.Translate (movement);
-		if (transform.localPosition.x < limitLeft) {
-			float x = 1 - transform.localPosition.x;
-			transform.localPosition += new Vector3 (x, 0, 0);
-		} else if (transform.localPosition.x > limitRight) {
-			float x = transform.localPosition.x - 11;
-			transform.localPosition -= new Vector3 (x, 0, 0);
+		if (transform.localPosition.x+movement.x < limitLeft) {
+			movement.x = limitLeft - transform.localPosition.x;
+			Debug.Log ("NewLocal: "+transform.localPosition.x+movement.x);
+		} else if (transform.localPosition.x+movement.x > limitRight) {
+			movement.x = limitRight - transform.localPosition.x;
 		}
+		transform.Translate (movement);
 	}
 
 	public void SetSpeed (Vector3 speedParam)
