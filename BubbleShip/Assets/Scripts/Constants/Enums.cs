@@ -18,4 +18,12 @@ public class Enums {
 		
 	};
 
+	public static Enums.BUBBLECOLOR getRandomBubbleColor(){
+		return (Enums.BUBBLECOLOR)Random.Range(0, 3);
+	}
+
+	public static int getRandomIntBubbleColor(){
+		return Random.Range(4, 7);
+	}
+
 }

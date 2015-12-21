@@ -4,9 +4,9 @@ using System.Collections;
 public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 {
 
-	public Vector3 rowCol;
+	[HideInInspector] public Vector3 rowCol;
 	GameController gameController;
-	GameObject owner;
+	public GameObject owner;
 	Animator animator;
 
 	public Enums.BUBBLECOLOR bubbleColor;
@@ -23,11 +23,21 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 		animator.SetInteger("color",bubbleColorParam);
 	}
 
+	public int GetColor(){
+		return animator.GetInteger ("color");
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
 		if (owner == null) {
 			gameController.insert (gameObject, false);
+		}
+	}
+
+	void Update(){
+		if(GetColor() != -1){
+			changeColor ((int)bubbleColor);
 		}
 	}
 
