@@ -25,7 +25,7 @@ public class Moveable : MonoBehaviour, IMoveable
 		Vector3 movement = speed * Time.deltaTime;
 		if (transform.localPosition.x+movement.x < limitLeft) {
 			movement.x = limitLeft - transform.localPosition.x;
-			Debug.Log ("NewLocal: "+transform.localPosition.x+movement.x);
+			//Debug.Log ("NewLocal: "+transform.localPosition.x+movement.x);
 		} else if (transform.localPosition.x+movement.x > limitRight) {
 			movement.x = limitRight - transform.localPosition.x;
 		}

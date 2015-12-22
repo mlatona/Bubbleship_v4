@@ -9,7 +9,7 @@ public class Killable : MonoBehaviour, IKillable {
 	public float killTimeOutSeconds;
 
 	void Start(){
-		Debug.Log ("Killable: "+killTimeOutSeconds);
+		//Debug.Log ("Killable: "+killTimeOutSeconds);
 		scorable = GetComponent<IScoreable>();
 		if (callbackStr != null) {
 			callback = (ICommand)GetComponent(callbackStr);
@@ -28,7 +28,7 @@ public class Killable : MonoBehaviour, IKillable {
 	}
 
 	private void Destroy(){
-		Debug.Log("Killable "+gameObject.tag);
+		//Debug.Log("Killable "+gameObject.tag);
 		Destroy (gameObject);
 	}
 

@@ -20,6 +20,10 @@ public class GameController{
 		return _instance;
 	}
 
+	public void resetGame(){
+		_instance = null;
+	}
+
 	public GameController() {
 		Debug.Log("Starts GameController ");
 		bubbleMatrix = new BubbleMatrix ();
@@ -40,14 +44,14 @@ public class GameController{
 		int sameColor = 1 + destroyBubbles 
 			(sameColorConeectedBubbles, bubbleMatrix.getNeighbours (bubbleScript, bubbleObj.transform.localPosition), bubbleObj);
 		//if there are three with the same color
-
+		Debug.Log (rowCol+"GameController SameColor: " + sameColor);
 		if (sameColor > 2) {
 			foreach (GameObject bubbleConnectedObj in sameColorConeectedBubbles.Values) {
 				//Destroy
 				if(bubbleConnectedObj==null){
 					continue;
 				}
-
+				Debug.Log(bubbleConnectedObj.name);
 				destroy(bubbleConnectedObj);
 			}
 		}

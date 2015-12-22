@@ -58,8 +58,10 @@ public class BubbleMatrix
 		}
 		bubbleObj.transform.localPosition = 
 			moveToCorrectPosition (bubbleObj.transform.localPosition, bubbleScript.GetRowCol());
-		
-		//Debug.Log ("INSERT: x:"+rowCol.x+", y:"+rowCol.y);
+		/*Debug.Log ("--MATRIX--"+rowCol);
+		foreach(string key in matrixBubble.Keys)
+			Debug.Log (key+"__"+rowCol);
+		Debug.Log ("--END_MATRIX--"+rowCol);*/
 	}
 
 	public void remove(string key){
@@ -76,21 +78,27 @@ public class BubbleMatrix
 		//Up and Down
 		neighbours[2] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y-1)] as GameObject;
 		neighbours[3] = matrixBubble["x:"+(rowCol.x)+", y:"+(rowCol.y+1)] as GameObject;
+		//Debug.Log ("--------"+rowCol+"------");
+		//Debug.Log ("x:"+(rowCol.x-1)+", y:"+(rowCol.y)+"_"+neighbours[0]+"-0");
+		//Debug.Log ("x:"+(rowCol.x+1)+", y:"+(rowCol.y)+"_"+neighbours[1]+"-1");
+		//Debug.Log ("x:"+(rowCol.x)+", y:"+(rowCol.y-1)+"_"+neighbours[2]+"-2");
+		//Debug.Log ("x:"+(rowCol.x)+", y:"+(rowCol.y+1)+"_"+neighbours[3]+"-3");
 		if (rowCol.y % 2 == 0) {
 			//In a even row we see left
 			neighbours[4] = matrixBubble["x:"+(rowCol.x+1)+", y:"+(rowCol.y+1)] as GameObject;
 			neighbours[5] = matrixBubble["x:"+(rowCol.x+1)+", y:"+(rowCol.y-1)] as GameObject;
+			//Debug.Log ("x:"+(rowCol.x+1)+", y:"+(rowCol.y+1)+"_"+neighbours[4]+"-4");
+			//Debug.Log ("x:"+(rowCol.x+1)+", y:"+(rowCol.y-1)+"_"+neighbours[5]+"-5");
 		} else {
 			//In a odd row we see right
 			neighbours [4] = matrixBubble ["x:" + (rowCol.x - 1) + ", y:" + (rowCol.y + 1)] as GameObject;
 			neighbours [5] = matrixBubble ["x:" + (rowCol.x - 1) + ", y:" + (rowCol.y - 1)] as GameObject;
+			//Debug.Log ("x:" + (rowCol.x - 1) + ", y:" + (rowCol.y + 1)+"_"+neighbours[4]+"-4");
+			//Debug.Log ("x:" + (rowCol.x - 1) + ", y:" + (rowCol.y - 1)+"_"+neighbours[5]+"-5");
 		}
-		//Debug.Log (rowCol+""+neighbours[0]+"0");
-		//Debug.Log (rowCol+""+neighbours[1]+"1");
-		//Debug.Log (rowCol+""+neighbours[2]+"2");
-		//Debug.Log (rowCol+""+neighbours[3]+"3");
-		//Debug.Log (rowCol+""+neighbours[4]+"4");
-		//Debug.Log (rowCol+""+neighbours[5]+"5");
+
+		//Debug.Log ("--------------------");
+		//Debug.Log ("--------------------");
 		return neighbours;
 	}
 

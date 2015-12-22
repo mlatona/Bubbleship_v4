@@ -15,7 +15,7 @@ public class KillCommand : MonoBehaviour, ICommand {
 
 	public void Run ()
 	{
-		Debug.Log ("KillCommand");
+		//Debug.Log ("KillCommand");
 		moveable.SetSpeed (Vector3.zero);
 		animator.SetInteger ("color", -1);
 	}

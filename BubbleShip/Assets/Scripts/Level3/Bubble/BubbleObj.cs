@@ -4,7 +4,7 @@ using System.Collections;
 public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 {
 
-	[HideInInspector] public Vector3 rowCol;
+	public Vector3 rowCol;
 	GameController gameController;
 	public GameObject owner;
 	Animator animator;
