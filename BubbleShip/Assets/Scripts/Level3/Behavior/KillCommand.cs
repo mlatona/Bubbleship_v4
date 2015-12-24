@@ -5,6 +5,7 @@ public class KillCommand : MonoBehaviour, ICommand {
 
 	Animator animator;
 	IMoveable moveable;
+	public string parameter;
 
 	void Awake(){
 		animator = GetComponent<Animator>();
@@ -17,7 +18,7 @@ public class KillCommand : MonoBehaviour, ICommand {
 	{
 		//Debug.Log ("KillCommand");
 		moveable.SetSpeed (Vector3.zero);
-		animator.SetInteger ("color", -1);
+		animator.SetInteger (parameter, -1);
 	}
 
 	#endregion

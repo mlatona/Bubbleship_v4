@@ -25,7 +25,7 @@ public class GameController{
 	}
 
 	public GameController() {
-		Debug.Log("Starts GameController ");
+		//Debug.Log("Starts GameController ");
 		bubbleMatrix = new BubbleMatrix ();
 		totalScore = 0;
 	}
@@ -44,7 +44,7 @@ public class GameController{
 		int sameColor = 1 + destroyBubbles 
 			(sameColorConeectedBubbles, bubbleMatrix.getNeighbours (bubbleScript, bubbleObj.transform.localPosition), bubbleObj);
 		//if there are three with the same color
-		Debug.Log (rowCol+"GameController SameColor: " + sameColor);
+		//Debug.Log (rowCol+"GameController SameColor: " + sameColor);
 		if (sameColor > 2) {
 			foreach (GameObject bubbleConnectedObj in sameColorConeectedBubbles.Values) {
 				//Destroy
