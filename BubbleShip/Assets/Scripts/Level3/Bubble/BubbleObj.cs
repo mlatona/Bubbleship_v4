@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
+public class BubbleObj : MonoBehaviour, IBubbleMatrix
 {
 
 	public Vector3 rowCol;
 	GameController gameController;
-	public GameObject owner;
+	IEnemyType enemyType;
 	Animator animator;
 
 	public Enums.BUBBLECOLOR bubbleColor;
 
 	void Awake ()
 	{
-		
 		animator = GetComponent<Animator>();
 		changeColor ((int)bubbleColor);
 		gameController = GameController.Instance ();
@@ -30,7 +29,9 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 	// Use this for initialization
 	void Start ()
 	{
-		if (owner == null) {
+		enemyType = GetComponent<IEnemyType> ();
+		
+		if (enemyType !=null && enemyType.Get()==Enums.OWNER.ANY) {
 			gameController.insert (gameObject, false);
 		}
 	}
@@ -48,16 +49,5 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix, IOwner
 	
 	public Enums.BUBBLECOLOR GetBubbleColor(){return bubbleColor;}
 	public void SetBubbleColor(Enums.BUBBLECOLOR bubbleColorParam){bubbleColor = bubbleColorParam;}
-	#endregion
-
-	#region IParam implementation
-	public void Set (GameObject t)
-	{
-		owner = t;
-	}
-	public GameObject Get ()
-	{
-		return owner;
-	}
 	#endregion
 }

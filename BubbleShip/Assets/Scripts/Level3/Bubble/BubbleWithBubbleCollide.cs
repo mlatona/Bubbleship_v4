@@ -5,13 +5,13 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 	
 	Collider2D collider2d;
 	GameController gameController;
-	IOwner owner;
+	IEnemyType enemy;
 	IDamageable damageable;
 
 	public void Start(){
 		gameController = GameController.Instance ();
 		damageable = gameObject.GetComponent<IDamageable>();
-		owner = GetComponent<IOwner> ();
+		enemy = GetComponent<IEnemyType> ();
 	}
 	
 	#region ICommand implementation
@@ -19,20 +19,20 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 	{
 		IMoveable moveable = GetComponent<IMoveable> ();
 
-		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
+		IEnemyType otherEnemy = collider2d.gameObject.GetComponent<IEnemyType> ();
+		Debug.Log (enemy.Get()+"-"+otherEnemy.Get());
 		//Bola que impacta con grupo de bolas
-		if (owner.Get () != null 
-			&& otherOwner.Get () == null) {
+		if (enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()==Enums.OWNER.ANY) {
 			//Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
 			moveable.SetSpeed (Vector3.zero);
 			gameController.insert (gameObject, true);
-			owner.Set (null);
+			enemy.Set (Enums.OWNER.ANY);
 			gameController.destroyBubbles (gameObject);
 		} 
 		//Bubble enemy that imact with bubble Ship
-		else if(owner.Get () != null 
-		        && otherOwner.Get () != null && owner.Get ().gameObject.tag!=otherOwner.Get ().gameObject.tag){
-			damageable.Damage(otherOwner.Get ().gameObject.GetComponent<IDamageable>().GetDamageTaken());
+		else if(enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()==Enums.OWNER.ISENEMY 
+		        || enemy.Get()==Enums.OWNER.ISENEMY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY){
+			damageable.Damage(collider2d.gameObject.GetComponent<IDamageable>().GetDamageTaken());
 		}
 	}
 	#endregion

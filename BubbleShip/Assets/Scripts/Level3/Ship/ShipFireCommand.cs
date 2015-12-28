@@ -28,7 +28,7 @@ public class ShipFireCommand : MonoBehaviour,ICommand {
 		//Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePos);
 		//worldMousePosition = worldMousePosition - (transform.position + new Vector3(0,1,0));
 		//worldMousePosition.z = 0;
-		fireCommand.speed = fireCommand.speed;
+		//fireCommand.speed = fireCommand.speed;
 		objectFire.bubbleColor = actualBubble.bubbleColor;
 		actualBubble.bubbleColor = nextBubble.bubbleColor;
 		nextBubble.bubbleColor = Enums.getRandomBubbleColor ();

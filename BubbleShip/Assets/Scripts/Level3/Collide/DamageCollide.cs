@@ -9,13 +9,11 @@ public class DamageCollide : MonoBehaviour,ICollideCommand {
 	public void Run ()
 	{
 		//Si es mia no me hace daño
-		IOwner otherOwner = collider2d.gameObject.GetComponent<IOwner> ();
-		IOwner owner = GetComponent<IOwner> ();
-		//Ambos son cosas distintas de poseidas
-		if ((owner == null && otherOwner == null)
-		//Una es poseida y le pertenece
-			|| (!(owner != null && owner.Get()!=null && owner.Get ().tag == collider2d.tag)
-		    && !(otherOwner != null && otherOwner.Get()!=null && otherOwner.Get ().tag == tag))) {
+		IEnemyType otherEnemy = collider2d.gameObject.GetComponent<IEnemyType> ();
+		IEnemyType enemy = GetComponent<IEnemyType> ();
+		if (enemy.Get()==Enums.OWNER.ISENEMY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY
+		    || enemy.Get()==Enums.OWNER.ANY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY
+		    || enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()!=Enums.OWNER.ISNOTENEMY) {
 			GetComponent<IDamageable> ().Damage (collider2d.GetComponent<IDamageable> ().GetDamageTaken ());
 		}
 	}

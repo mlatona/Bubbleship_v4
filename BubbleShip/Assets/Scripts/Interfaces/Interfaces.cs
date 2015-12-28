@@ -25,7 +25,7 @@ public interface ICollideCommand : IParam<Collider2D>,ICommand{
 
 }
 
-public interface IOwner : IParam<GameObject>{
+public interface IEnemyType : IParam<Enums.OWNER>{
 
 }
 

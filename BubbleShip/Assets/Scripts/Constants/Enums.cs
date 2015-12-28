@@ -26,4 +26,11 @@ public class Enums {
 		return Random.Range(4, 7);
 	}
 
+	public enum OWNER
+	{
+		ANY=0,
+		ISENEMY=1,
+		ISNOTENEMY=2
+	}
+
 }
