@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ReboteVertical : MonoBehaviour {
 	
-	int direction = 1;
+	public int direction = 1;
+	public float velocidadY = 0.01f;
 
 	void Update(){
 
-		transform.Translate(0,direction*0.01f,0);
+		transform.Translate(0,direction*velocidadY,0);
 
 		if (transform.position.y > 2) {
 			direction = -1;

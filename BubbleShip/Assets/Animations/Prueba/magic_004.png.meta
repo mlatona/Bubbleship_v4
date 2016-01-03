@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 3629bb590fd0e71428dd64e6e32bb1e0
+timeCreated: 1450393396
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: magic_004_0
+    21300002: magic_004_1
+    21300004: magic_004_2
+    21300006: magic_004_3
+    21300008: magic_004_4
+    21300010: magic_004_5
+    21300012: magic_004_6
+    21300014: magic_004_7
+    21300016: magic_004_8
+    21300018: magic_004_9
+    21300020: magic_004_10
+    21300022: magic_004_11
+    21300024: magic_004_12
+    21300026: magic_004_13
+    21300028: magic_004_14
+    21300030: magic_004_15
+    21300032: magic_004_16
+    21300034: magic_004_17
+    21300036: magic_004_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: magic_004_0
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 534
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59, y: 4}
+        - {x: 42, y: -26}
+        - {x: 42, y: -65}
+        - {x: 46, y: -69}
+        - {x: 61, y: -69}
+        - {x: 78, y: -57}
+        - {x: 86, y: -26}
+        - {x: 86, y: 2}
+        - {x: 85, y: 4}
+    - name: magic_004_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 534
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: 10}
+        - {x: 49, y: 7}
+        - {x: 0, y: -74}
+        - {x: 0, y: -89}
+        - {x: 38, y: -89}
+        - {x: 68, y: -83}
+        - {x: 93, y: -34}
+        - {x: 93, y: 2}
+        - {x: 84, y: 10}
+    - name: magic_004_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 534
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 14}
+        - {x: 54, y: 14}
+        - {x: 44, y: 1}
+        - {x: -62, y: -37}
+        - {x: -62, y: -67}
+        - {x: -46, y: -89}
+        - {x: 45, y: -89}
+        - {x: 71, y: -84}
+        - {x: 96, y: -42}
+        - {x: 96, y: 10}
+    - name: magic_004_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 534
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: 16}
+        - {x: 45, y: 13}
+        - {x: 17, y: 16}
+        - {x: -81, y: 16}
+        - {x: -81, y: -44}
+        - {x: -66, y: -71}
+        - {x: -50, y: -89}
+        - {x: 82, y: -89}
+        - {x: 96, y: -46}
+        - {x: 96, y: 15}
+        - {x: 95, y: 16}
+    - name: magic_004_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 356
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: 6}
+        - {x: 46, y: -12}
+        - {x: -31, y: 46}
+        - {x: -61, y: 46}
+        - {x: -85, y: 38}
+        - {x: -85, y: -89}
+        - {x: 90, y: -89}
+        - {x: 96, y: -67}
+        - {x: 96, y: 0}
+        - {x: 89, y: 3}
+    - name: magic_004_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 356
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 66}
+        - {x: -87, y: 31}
+        - {x: -87, y: -81}
+        - {x: -82, y: -89}
+        - {x: 91, y: -89}
+        - {x: 96, y: -79}
+        - {x: 96, y: 66}
+    - name: magic_004_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 356
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64, y: 3}
+        - {x: 59, y: 0}
+        - {x: 49, y: -7}
+        - {x: 43, y: -18}
+        - {x: -46, y: -52}
+        - {x: 71, y: 15}
+        - {x: 62, y: 50}
+        - {x: 25, y: 74}
+        - {x: -21, y: 74}
+        - {x: -66, y: 65}
+        - {x: -88, y: 44}
+        - {x: -88, y: -73}
+        - {x: -83, y: -89}
+        - {x: 71, y: -89}
+        - {x: 96, y: -53}
+        - {x: 96, y: -8}
+        - {x: 79, y: 4}
+      - - {x: 10, y: 83}
+        - {x: 16, y: 83}
+        - {x: 20, y: 86}
+        - {x: 20, y: 89}
+        - {x: 5, y: 89}
+        - {x: 6, y: 86}
+    - name: magic_004_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 356
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -72, y: 77}
+        - {x: -90, y: 48}
+        - {x: -90, y: -84}
+        - {x: -85, y: -89}
+        - {x: 84, y: -89}
+        - {x: 96, y: -65}
+        - {x: 96, y: 18}
+        - {x: 41, y: 77}
+      - - {x: -12, y: 89}
+        - {x: -12, y: 87}
+        - {x: -5, y: 81}
+        - {x: 7, y: 78}
+        - {x: 15, y: 78}
+        - {x: 28, y: 85}
+        - {x: 30, y: 87}
+        - {x: 29, y: 89}
+    - name: magic_004_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 356
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 89}
+        - {x: -27, y: 86}
+        - {x: -73, y: 52}
+        - {x: -88, y: 30}
+        - {x: -88, y: -57}
+        - {x: -85, y: -79}
+        - {x: -72, y: -89}
+        - {x: 65, y: -89}
+        - {x: 96, y: -70}
+        - {x: 96, y: 25}
+        - {x: 64, y: 89}
+    - name: magic_004_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: -5}
+        - {x: 71, y: 18}
+        - {x: 33, y: 36}
+        - {x: -41, y: 36}
+        - {x: -96, y: -14}
+        - {x: -96, y: -89}
+        - {x: 88, y: -89}
+        - {x: 89, y: -62}
+        - {x: 89, y: -25}
+      - - {x: -61, y: 89}
+        - {x: -61, y: 88}
+        - {x: -56, y: 80}
+        - {x: -13, y: 61}
+        - {x: 23, y: 61}
+        - {x: 58, y: 87}
+        - {x: 58, y: 89}
+    - name: magic_004_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 178
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 41}
+        - {x: -96, y: -17}
+        - {x: -96, y: -89}
+        - {x: 91, y: -89}
+        - {x: 91, y: 6}
+        - {x: 90, y: 8}
+        - {x: 61, y: 28}
+        - {x: 17, y: 41}
+      - - {x: -62, y: 89}
+        - {x: -62, y: 84}
+        - {x: -32, y: 64}
+        - {x: 17, y: 64}
+        - {x: 66, y: 83}
+        - {x: 66, y: 89}
+    - name: magic_004_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 178
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 41}
+        - {x: -78, y: 29}
+        - {x: -96, y: -9}
+        - {x: -96, y: -73}
+        - {x: -94, y: -80}
+        - {x: -63, y: -82}
+        - {x: -10, y: -89}
+        - {x: 89, y: -89}
+        - {x: 89, y: 14}
+        - {x: 52, y: 41}
+      - - {x: -63, y: 89}
+        - {x: -63, y: 85}
+        - {x: -28, y: 63}
+        - {x: -16, y: 61}
+        - {x: 20, y: 61}
+        - {x: 61, y: 86}
+        - {x: 61, y: 89}
+    - name: magic_004_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 178
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 38}
+        - {x: -58, y: 22}
+        - {x: -93, y: 8}
+        - {x: -96, y: -10}
+        - {x: -96, y: -73}
+        - {x: -86, y: -80}
+        - {x: -58, y: -82}
+        - {x: -41, y: -59}
+        - {x: 33, y: -89}
+        - {x: 88, y: -89}
+        - {x: 88, y: 17}
+        - {x: 40, y: 38}
+      - - {x: -58, y: 89}
+        - {x: -58, y: 80}
+        - {x: -25, y: 61}
+        - {x: 19, y: 61}
+        - {x: 21, y: 62}
+        - {x: 45, y: 84}
+        - {x: 47, y: 89}
+    - name: magic_004_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 178
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: 41}
+        - {x: -80, y: 35}
+        - {x: -96, y: -5}
+        - {x: -96, y: -89}
+        - {x: 86, y: -89}
+        - {x: 86, y: 28}
+        - {x: 41, y: 41}
+      - - {x: -67, y: 89}
+        - {x: -67, y: 79}
+        - {x: -21, y: 66}
+        - {x: 29, y: 66}
+        - {x: 57, y: 84}
+        - {x: 57, y: 89}
+    - name: magic_004_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84, y: -52}
+        - {x: 71, y: -16}
+        - {x: 61, y: 4}
+        - {x: 88, y: 68}
+        - {x: 88, y: 89}
+        - {x: -90, y: 89}
+        - {x: -91, y: 87}
+        - {x: -65, y: 48}
+        - {x: -96, y: -33}
+        - {x: -96, y: -83}
+        - {x: -93, y: -89}
+        - {x: -52, y: -89}
+        - {x: -35, y: -82}
+        - {x: 69, y: -83}
+        - {x: 81, y: -77}
+        - {x: 83, y: -68}
+    - name: magic_004_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 24}
+        - {x: -84, y: -7}
+        - {x: -96, y: -47}
+        - {x: -96, y: -89}
+        - {x: -33, y: -89}
+        - {x: 63, y: -26}
+        - {x: 63, y: -3}
+        - {x: 9, y: 24}
+      - - {x: -80, y: 89}
+        - {x: -80, y: 67}
+        - {x: -42, y: 25}
+        - {x: 34, y: 25}
+        - {x: 41, y: 27}
+        - {x: 83, y: 54}
+        - {x: 89, y: 78}
+        - {x: 89, y: 89}
+    - name: magic_004_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 19}
+        - {x: -69, y: 9}
+        - {x: -92, y: -38}
+        - {x: -92, y: -85}
+        - {x: -90, y: -86}
+        - {x: -38, y: -86}
+        - {x: 1, y: -34}
+        - {x: 1, y: 10}
+        - {x: -8, y: 19}
+      - - {x: -64, y: 89}
+        - {x: -67, y: 88}
+        - {x: -67, y: 45}
+        - {x: -23, y: 28}
+        - {x: 45, y: 28}
+        - {x: 83, y: 56}
+        - {x: 88, y: 74}
+        - {x: 88, y: 89}
+    - name: magic_004_17
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69, y: -7}
+        - {x: -85, y: -29}
+        - {x: -85, y: -74}
+        - {x: -84, y: -75}
+        - {x: -75, y: -80}
+        - {x: -64, y: -80}
+        - {x: -49, y: -67}
+        - {x: -41, y: -33}
+        - {x: -41, y: -7}
+      - - {x: 85, y: 84}
+        - {x: 86, y: 89}
+        - {x: 34, y: 89}
+        - {x: -20, y: 61}
+        - {x: -20, y: 41}
+        - {x: -14, y: 36}
+        - {x: 7, y: 36}
+        - {x: 51, y: 43}
+        - {x: 73, y: 60}
+        - {x: 81, y: 72}
+    - name: magic_004_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: 89}
+        - {x: 36, y: 77}
+        - {x: 36, y: 64}
+        - {x: 37, y: 56}
+        - {x: 63, y: 56}
+        - {x: 78, y: 80}
+        - {x: 78, y: 89}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

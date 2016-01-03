@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 4c77f8206a91c064280afaf692df0b55
+timeCreated: 1450704924
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: carton_todos_OK_0
+    21300002: carton_todos_OK_1
+    21300004: carton_todos_OK_2
+    21300006: carton_todos_OK_3
+    21300008: carton_todos_OK_4
+    21300010: carton_todos_OK_5
+    21300012: carton_todos_OK_6
+    21300014: carton_todos_OK_7
+    21300016: carton_todos_OK_8
+    21300018: carton_todos_OK_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: carton_todos_OK_0
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 184
+        width: 700
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.49489, y: 71.0533}
+        - {x: -70.49489, y: 44.0533}
+        - {x: -70.49489, y: -57.9467}
+        - {x: -54.49489, y: -70.9467}
+        - {x: 53.50511, y: -70.9467}
+        - {x: 70.50511, y: -49.9467}
+        - {x: 70.50511, y: 37.0533}
+        - {x: 57.50511, y: 71.0533}
+    - name: carton_todos_OK_1
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.50038, y: 71.0533}
+        - {x: -70.50038, y: 44.0533}
+        - {x: -70.50038, y: -56.9467}
+        - {x: -34.50038, y: -70.9467}
+        - {x: 43.49962, y: -70.9467}
+        - {x: 72.49962, y: -42.9467}
+        - {x: 72.49962, y: 39.0533}
+        - {x: 61.49962, y: 71.0533}
+    - name: carton_todos_OK_2
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.998993, y: 71.0533}
+        - {x: -70.99899, y: 64.0533}
+        - {x: -70.99899, y: -52.9467}
+        - {x: -53.998993, y: -70.9467}
+        - {x: 53.001007, y: -70.9467}
+        - {x: 71.00101, y: -52.9467}
+        - {x: 71.00101, y: 38.0533}
+        - {x: 56.001007, y: 71.0533}
+    - name: carton_todos_OK_3
+      rect:
+        serializedVersion: 2
+        x: 3198
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.99762, y: 71.0533}
+        - {x: -70.99762, y: 46.0533}
+        - {x: -70.99762, y: -31.946701}
+        - {x: -66.99762, y: -51.9467}
+        - {x: -43.99762, y: -70.9467}
+        - {x: 39.00238, y: -70.9467}
+        - {x: 58.00238, y: -66.9467}
+        - {x: 71.00238, y: -48.9467}
+        - {x: 71.00238, y: 36.0533}
+        - {x: 56.00238, y: 71.0533}
+    - name: carton_todos_OK_4
+      rect:
+        serializedVersion: 2
+        x: 4216
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.996216, y: 71.0533}
+        - {x: -70.996216, y: 47.0533}
+        - {x: -70.996216, y: -41.9467}
+        - {x: -65.996216, y: -61.9467}
+        - {x: -50.996216, y: -70.9467}
+        - {x: 58.003784, y: -70.9467}
+        - {x: 71.003784, y: -50.9467}
+        - {x: 71.003784, y: 60.0533}
+        - {x: 42.003784, y: 71.0533}
+    - name: carton_todos_OK_5
+      rect:
+        serializedVersion: 2
+        x: 5234
+        y: 184
+        width: 700
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.494873, y: 71.0533}
+        - {x: -70.49487, y: 44.0533}
+        - {x: -70.49487, y: -57.9467}
+        - {x: -54.494873, y: -70.9467}
+        - {x: 53.505127, y: -70.9467}
+        - {x: 70.50513, y: -49.9467}
+        - {x: 70.50513, y: 37.0533}
+        - {x: 57.505127, y: 71.0533}
+    - name: carton_todos_OK_6
+      rect:
+        serializedVersion: 2
+        x: 6247
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.500366, y: 71.0533}
+        - {x: -70.50037, y: 44.0533}
+        - {x: -70.50037, y: -56.9467}
+        - {x: -34.500366, y: -70.9467}
+        - {x: 43.499634, y: -70.9467}
+        - {x: 72.49963, y: -42.9467}
+        - {x: 72.49963, y: 39.0533}
+        - {x: 61.499634, y: 71.0533}
+    - name: carton_todos_OK_7
+      rect:
+        serializedVersion: 2
+        x: 7265
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.999023, y: 71.0533}
+        - {x: -70.99902, y: 64.0533}
+        - {x: -70.99902, y: -52.9467}
+        - {x: -53.999023, y: -70.9467}
+        - {x: 53.000977, y: -70.9467}
+        - {x: 71.00098, y: -52.9467}
+        - {x: 71.00098, y: 38.0533}
+        - {x: 56.000977, y: 71.0533}
+    - name: carton_todos_OK_8
+      rect:
+        serializedVersion: 2
+        x: 8283
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.99756, y: 71.0533}
+        - {x: -70.99756, y: 46.0533}
+        - {x: -70.99756, y: -31.946701}
+        - {x: -66.99756, y: -51.9467}
+        - {x: -43.99756, y: -70.9467}
+        - {x: 39.00244, y: -70.9467}
+        - {x: 58.00244, y: -66.9467}
+        - {x: 71.00244, y: -48.9467}
+        - {x: 71.00244, y: 36.0533}
+        - {x: 56.00244, y: 71.0533}
+    - name: carton_todos_OK_9
+      rect:
+        serializedVersion: 2
+        x: 9301
+        y: 184
+        width: 705
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.996216, y: 71.0533}
+        - {x: -70.996216, y: 47.0533}
+        - {x: -70.996216, y: -41.9467}
+        - {x: -65.996216, y: -61.9467}
+        - {x: -50.996216, y: -70.9467}
+        - {x: 58.003784, y: -70.9467}
+        - {x: 71.003784, y: -50.9467}
+        - {x: 71.003784, y: 60.0533}
+        - {x: 42.003784, y: 71.0533}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

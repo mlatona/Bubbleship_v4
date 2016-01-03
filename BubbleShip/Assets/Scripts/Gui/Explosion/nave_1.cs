@@ -27,6 +27,7 @@ public class nave_1 : MonoBehaviour {
 		
 		Vector3 movement = tmp * Time.deltaTime;
 		transform.Translate (movement);
+		//PlayExplosion();
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
