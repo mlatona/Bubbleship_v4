@@ -27,6 +27,8 @@ public class BossLevel1 : MonoBehaviour {
 		// Translation 
 		transform.Translate (movement);
 
+
+
 	
 	}
 

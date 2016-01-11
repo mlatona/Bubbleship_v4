@@ -55,7 +55,7 @@ public class Collision : MonoBehaviour {
 
 		if (bubble.playerFired && !bubble.oneContact) {
 			bubble.oneContact = true;
-			return;
+			//return;
 		}
 
 
@@ -78,14 +78,14 @@ public class Collision : MonoBehaviour {
 			
 			if (hp == 2) {
 				Debug.Log ("hp==2");
-				GameObject.FindGameObjectWithTag ("HP1").GetComponent<Image> ().sprite = hpRemoved;
-				//Destroy(GameObject.FindGameObjectWithTag("HP1"));
+				//GameObject.FindGameObjectWithTag ("HP1").GetComponent<Image> ().sprite = hpRemoved;
+				Destroy(GameObject.FindGameObjectWithTag("HP1"));
 			}
 			
 			if (hp == 1) {
 				Debug.Log ("hp==1");
-				GameObject.FindGameObjectWithTag ("HP2").GetComponent<Image> ().sprite = hpRemoved;
-				//Destroy(GameObject.FindGameObjectWithTag("HP2"));
+				//GameObject.FindGameObjectWithTag ("HP2").GetComponent<Image> ().sprite = hpRemoved;
+				Destroy(GameObject.FindGameObjectWithTag("HP2"));
 			}
 			
 
