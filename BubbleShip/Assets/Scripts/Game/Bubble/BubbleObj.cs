@@ -8,13 +8,12 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 	GameController gameController;
 	IEnemyType enemyType;
 	Animator animator;
-
-	public Enums.BUBBLECOLOR bubbleColor;
-
+	public Enums.BUBBLECOLOR staticBubbleColor;
+	[HideInInspector] public Enums.BUBBLECOLOR bubbleColor;
 	void Awake ()
 	{
+		enemyType = GetComponent<IEnemyType> ();
 		animator = GetComponent<Animator>();
-		changeColor ((int)bubbleColor);
 		gameController = GameController.Instance ();
 	}
 
@@ -28,11 +27,11 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 
 	// Use this for initialization
 	void Start ()
-	{
-		enemyType = GetComponent<IEnemyType> ();
-		
+	{	
+		changeColor ((int)bubbleColor);
 		if (enemyType !=null && enemyType.Get()==Enums.OWNER.ANY) {
 			gameController.insert (gameObject, false);
+			bubbleColor = staticBubbleColor;
 		}
 	}
 

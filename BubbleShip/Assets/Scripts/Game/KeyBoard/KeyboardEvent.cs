@@ -11,8 +11,12 @@ public class KeyboardEvent : MonoBehaviour
 	public bool preventPauseEffect = false;
 	float timeElapsed = 99999;
 	float threshold = 0.1f;
+	ICommand scCommandOn;
+	ICommand scCommandOff;
 
 	void Start(){
+		scCommandOn = (ICommand)gameObject.GetComponent (commandOn);
+		scCommandOff = (ICommand)gameObject.GetComponent (commandOff); 
 		if (!preventPauseEffect) {
 			threshold = 0;
 		}
@@ -24,15 +28,13 @@ public class KeyboardEvent : MonoBehaviour
 		timeElapsed += Time.deltaTime + threshold;
 		if (timeElapsed >= timeBetweenEvents) {
 			if (Input.GetButton (eventname)) {
-				ICommand command = (ICommand)gameObject.GetComponent (commandOn);
-				if (command != null) {
-					command.Run ();
+				if (scCommandOn != null) {
+					scCommandOn.Run ();
 				}
 				timeElapsed = 0;
 			} else {
-				ICommand command = (ICommand)gameObject.GetComponent (commandOff);
-				if (command != null) {
-					command.Run ();
+				if (scCommandOff != null) {
+					scCommandOff.Run ();
 				}
 			}
 		}

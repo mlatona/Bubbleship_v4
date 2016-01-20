@@ -6,6 +6,7 @@ public class BubbleMatrix
 
 	public const int ROW_SIZE = 1;
 	public const int COL_SIZE = 1;
+	public const float DIFERENCE = 2f;
 
 	Hashtable matrixBubble;
 
@@ -21,11 +22,11 @@ public class BubbleMatrix
 		float x, y;
 		//Debug.Log (rowCol.y % 2);
 		if (rowCol.y % 2 == 0) {
-			x = rowCol.x * COL_SIZE + COL_SIZE / 2f + COL_SIZE / 2f;
+			x = rowCol.x * COL_SIZE + COL_SIZE / DIFERENCE + COL_SIZE / DIFERENCE;
 		} else {
-			x = rowCol.x * COL_SIZE + COL_SIZE / 2f;
+			x = rowCol.x * COL_SIZE + COL_SIZE / DIFERENCE;
 		}
-		y = rowCol.y * ROW_SIZE + ROW_SIZE / 2f;
+		y = rowCol.y * ROW_SIZE + ROW_SIZE / DIFERENCE;
 
 		return new Vector3 (x, y, position.z);
 	}
@@ -46,7 +47,7 @@ public class BubbleMatrix
 		Vector3 rowCol = calcColAndRow (bubbleObj.transform.localPosition);
 		if (substract) {
 			if (rowCol.y % 2 == 0){
-				bubbleObj.transform.localPosition -= new Vector3(COL_SIZE / 2f, 0, 0);
+				bubbleObj.transform.localPosition -= new Vector3(COL_SIZE / DIFERENCE, 0, 0);
 				rowCol = calcColAndRow (bubbleObj.transform.localPosition);
 			}
 		}
