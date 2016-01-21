@@ -12,6 +12,7 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 	[HideInInspector] public Enums.BUBBLECOLOR bubbleColor;
 	void Awake ()
 	{
+		enabled = false;
 		enemyType = GetComponent<IEnemyType> ();
 		animator = GetComponent<Animator>();
 		gameController = GameController.Instance ();
@@ -25,6 +26,11 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 		return animator.GetInteger ("color");
 	}
 
+	void OnBecameVisible(){
+		//Debug.Log ("Activo");
+		enabled = true;
+	}
+
 	// Use this for initialization
 	void Start ()
 	{	
@@ -36,6 +42,7 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 	}
 
 	void Update(){
+//		Debug.Log (enabled +"_"+ Time.deltaTime +"_"+ staticBubbleColor);
 		if(GetColor() != -1){
 			changeColor ((int)bubbleColor);
 		}

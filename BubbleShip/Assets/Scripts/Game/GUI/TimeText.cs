@@ -25,7 +25,7 @@ public class TimeText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeElapsed += Time.deltaTime;
-		Debug.Log (timeElapsed);
+		//Debug.Log (timeElapsed);
 		text.text = string.Format("{0:D3}", Mathf.FloorToInt(timeElapsed));
 		if(maxTimeSeconds<timeElapsed){
 			if (maxTimeCommand != null) {

@@ -4,8 +4,8 @@ using System.Collections;
 public class BubbleMatrix
 {
 
-	public const int ROW_SIZE = 1;
-	public const int COL_SIZE = 1;
+	public const float ROW_SIZE = 1.4f;
+	public const float COL_SIZE = 1.4f;
 	public const float DIFERENCE = 2f;
 
 	Hashtable matrixBubble;
@@ -22,11 +22,11 @@ public class BubbleMatrix
 		float x, y;
 		//Debug.Log (rowCol.y % 2);
 		if (rowCol.y % 2 == 0) {
-			x = rowCol.x * COL_SIZE + COL_SIZE / DIFERENCE + COL_SIZE / DIFERENCE;
+			x = rowCol.x * COL_SIZE + (COL_SIZE / DIFERENCE) + (COL_SIZE / DIFERENCE);
 		} else {
-			x = rowCol.x * COL_SIZE + COL_SIZE / DIFERENCE;
+			x = rowCol.x * COL_SIZE + (COL_SIZE / DIFERENCE);
 		}
-		y = rowCol.y * ROW_SIZE + ROW_SIZE / DIFERENCE;
+		y = rowCol.y * ROW_SIZE + (ROW_SIZE / DIFERENCE);
 
 		return new Vector3 (x, y, position.z);
 	}
@@ -34,8 +34,8 @@ public class BubbleMatrix
 	//Calculate col and row with x and y position
 	public Vector3 calcColAndRow (Vector3 position)
 	{
-		int col = (int)position.x / COL_SIZE;
-		int row = (int)position.y / ROW_SIZE;
+		int col = (int)(position.x / COL_SIZE);
+		int row = (int)(position.y / ROW_SIZE);
 
 		return new Vector3 (col, row, position.z);
 	}

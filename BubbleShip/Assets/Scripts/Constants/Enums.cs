@@ -5,25 +5,20 @@ public class Enums {
 
 	public enum BUBBLECOLOR
 	{
-		BLUE=0,
-		RED=1,
-		PURPLE=2,
-		GREEN=3,
-		
-		//Richard
-		CARTON=4,
-		LATA=5,
-		PILA=6,
-		PLASTICO=7
+		PILA=0,
+		LATA=1,
+		CARTON=2,
+		PLASTICO=3
+
 		
 	};
 
 	public static Enums.BUBBLECOLOR getRandomBubbleColor(){
-		return (Enums.BUBBLECOLOR)Random.Range(0, 3);
+		return (Enums.BUBBLECOLOR)Random.Range(0, 4);
 	}
 
 	public static int getRandomIntBubbleColor(){
-		return Random.Range(4, 7);
+		return Random.Range(0, 4);
 	}
 
 	public enum OWNER
