@@ -14,7 +14,7 @@ public class HorizontalMoveCommand : MonoBehaviour,ICommand {
 		float inputX = Input.GetAxis ("Horizontal");
 		Vector3 actualSpeed = moveable.GetSpeed();
 		actualSpeed.x = inputX * adjust;
-		gameObject.GetComponent<IMoveable> ().SetSpeed (actualSpeed);
+		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2(actualSpeed.x, 0);
 	}
 
 }

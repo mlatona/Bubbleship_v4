@@ -4,14 +4,13 @@ using System.Collections;
 public class VerticalSpeedCommand : MonoBehaviour, ICommand {
 
 	IMoveable moveable;
-	float baseSpeed;
 	public float maxSpeed;
+	public float minSpeed;
 	public float adjust;
 
 	// Use this for initialization
 	void Start () {
 		moveable = GetComponent<IMoveable>();
-		baseSpeed = moveable.GetSpeed().y;
 	}
 	
 	// Update is called once per frame
@@ -19,8 +18,8 @@ public class VerticalSpeedCommand : MonoBehaviour, ICommand {
 		float inputY = Input.GetAxis ("Vertical");
 		Vector3 actualSpeed = moveable.GetSpeed();
 		actualSpeed.y += inputY * adjust;
-		if (actualSpeed.y < baseSpeed) {
-			actualSpeed.y = baseSpeed;
+		if (actualSpeed.y < minSpeed) {
+			actualSpeed.y = minSpeed;
 		}else if(actualSpeed.y > maxSpeed){
 			actualSpeed.y = maxSpeed;
 		}
