@@ -7,9 +7,11 @@ public class Killable : MonoBehaviour, IKillable {
 	ICommand callback;
 	IScoreable scorable;
 	public float killTimeOutSeconds;
+	Collider2D col;
 
 	void Start(){
 		//Debug.Log ("Killable: "+killTimeOutSeconds);
+		col = GetComponent<Collider2D> ();
 		scorable = GetComponent<IScoreable>();
 		if (callbackStr != null) {
 			callback = (ICommand)GetComponent(callbackStr);
@@ -23,6 +25,7 @@ public class Killable : MonoBehaviour, IKillable {
 		if (scorable != null) {
 			scorable.Score();
 		}
+		col.enabled = false;
 		//kill
 		Invoke ("Destroy", killTimeOutSeconds);
 	}

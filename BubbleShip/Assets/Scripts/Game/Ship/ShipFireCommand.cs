@@ -20,7 +20,7 @@ public class ShipFireCommand : MonoBehaviour,ICommand {
 	}
 	
 	public void Run(){
-		if (gameController.paused) {
+		if (gameController.paused || Input.GetButton("Fire2")) {
 			return;
 		}
 		//Vector3 mousePos = Input.mousePosition;

@@ -29,6 +29,13 @@ public class BubbleObj : MonoBehaviour, IBubbleMatrix
 	void OnBecameVisible(){
 		//Debug.Log ("Activo");
 		enabled = true;
+		GameController.Instance ().addVisible (this);
+	}
+
+	void OnBecameInvisible(){
+		//Debug.Log ("InActivo");
+		enabled = false;
+		//gameController.destroy (gameObject);
 	}
 
 	// Use this for initialization

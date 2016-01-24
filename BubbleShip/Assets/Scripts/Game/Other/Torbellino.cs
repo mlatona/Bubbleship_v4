@@ -13,12 +13,15 @@ public class Torbellino : MonoBehaviour {
 	
 	}
 
-	void onTriggerExit2D(Collider2D collider){
+	void OnTriggerExit2D(Collider2D collider){
 		IMoveable m = collider.gameObject.GetComponent<IMoveable> ();
 		m.SetSpeed (new Vector3(0, m.GetSpeed().y, 0));
+		//Debug.Log ("Exit");
 	}
 
 	void OnTriggerStay2D(Collider2D collider){
+		if (collider.tag != "Player")
+			return;
 		float dirX = transform.position.x - collider.transform.position.x;
 		IMoveable m = collider.gameObject.GetComponent<IMoveable> ();
 		if (dirX > 2) {
@@ -29,6 +32,6 @@ public class Torbellino : MonoBehaviour {
 		} else {
 			m.SetSpeed (new Vector3 (0, m.GetSpeed ().y, 0));
 		}
-		Debug.Log (dirX);
+		//Debug.Log ("InSide");
 	}
 }

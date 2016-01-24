@@ -16,6 +16,7 @@ public class FireCommand : MonoBehaviour, ICommand {
 		GameObject b = 
 			Instantiate(objectFire, transform.position + added, transform.rotation) as GameObject;
 		b.transform.parent = gameObject.transform.parent;
+		b.transform.eulerAngles = Vector3.zero;
 		b.GetComponent<IMoveable> ().SetSpeed (speed);
 		Debug.Log (enemyType);
 		b.GetComponent<IEnemyType> ().Set (enemyType);

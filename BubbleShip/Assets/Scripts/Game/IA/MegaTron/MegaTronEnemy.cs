@@ -2,6 +2,7 @@
 using System.Collections;
 using MegaTron;
 
+
 public class MegaTronEnemy : MonoBehaviour {
 
 	Enemy enemyIA;
@@ -15,3 +16,4 @@ public class MegaTronEnemy : MonoBehaviour {
 		enemyIA.Update ();
 	}
 }
+

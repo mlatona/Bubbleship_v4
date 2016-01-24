@@ -71,6 +71,10 @@ public class BubbleMatrix
 
 	public GameObject[] getNeighbours(IBubbleMatrix bubbleScript, Vector3 localPosition){
 		Vector3 rowCol = bubbleScript.GetRowCol();
+		return getNeighbours (rowCol);
+	}
+
+	public GameObject[] getNeighbours(Vector3 rowCol){
 		//Debug.Log ("--x:"+rowCol.x+", y:"+rowCol.y);
 		GameObject[] neighbours = new GameObject[6];
 		//Left and Right
@@ -97,7 +101,7 @@ public class BubbleMatrix
 			//Debug.Log ("x:" + (rowCol.x - 1) + ", y:" + (rowCol.y + 1)+"_"+neighbours[4]+"-4");
 			//Debug.Log ("x:" + (rowCol.x - 1) + ", y:" + (rowCol.y - 1)+"_"+neighbours[5]+"-5");
 		}
-
+		
 		//Debug.Log ("--------------------");
 		//Debug.Log ("--------------------");
 		return neighbours;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using MegaTron;
 
+namespace MegaTron{
 public class Thinking : IState {
 
 	readonly GameObject stateable;
@@ -38,4 +38,5 @@ public class Thinking : IState {
 
 
 
+}
 }

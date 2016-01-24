@@ -6,9 +6,13 @@ public class GameController{
 
 	public static GameController _instance = null;
 
+	static int sizeSp = 3;
 	BubbleMatrix bubbleMatrix;
 	public bool paused = false;
 	int totalScore;
+	int[] bubbleSp;
+	int bubbleSpIn;
+	ArrayList visibles;
 
 	public static GameController Instance() { 
 		
@@ -28,11 +32,41 @@ public class GameController{
 		//Debug.Log("Starts GameController ");
 		bubbleMatrix = new BubbleMatrix ();
 		totalScore = 0;
+		bubbleSp = new int[sizeSp];
+		for(int i=0;i<sizeSp;i++){
+			bubbleSp[i] = -1;
+		}
+		bubbleSpIn = 0;
+		visibles = new ArrayList ();
 	}
 
 	public void insert (GameObject bubbleObj, bool substract)
 	{
 		bubbleMatrix.insert (bubbleObj, substract);
+	}
+
+	public Vector3 getRowCol(Vector3 pos){
+		return bubbleMatrix.calcColAndRow (pos);
+	}
+
+	public Vector3 correctPosition(Vector3 pos, Vector3 rowCol){
+		return bubbleMatrix.moveToCorrectPosition (pos, rowCol);
+	}
+
+	public GameObject[] getNeighbours(Vector3 rowCol){
+		return bubbleMatrix.getNeighbours (rowCol);
+	}
+
+	public void destroyBubbles (GameObject[] bubbles)
+	{
+		foreach (GameObject bubbleConnectedObj in bubbles) {
+			//Destroy
+			if (bubbleConnectedObj == null) {
+				continue;
+			}
+			Debug.Log (bubbleConnectedObj.name);
+			destroy (bubbleConnectedObj);
+		}
 	}
 
 	public void destroyBubbles(GameObject bubbleObj){
@@ -48,11 +82,11 @@ public class GameController{
 		if (sameColor > 2) {
 			foreach (GameObject bubbleConnectedObj in sameColorConeectedBubbles.Values) {
 				//Destroy
-				if(bubbleConnectedObj==null){
+				if (bubbleConnectedObj == null) {
 					continue;
 				}
-				Debug.Log(bubbleConnectedObj.name);
-				destroy(bubbleConnectedObj);
+				Debug.Log (bubbleConnectedObj.name);
+				destroy (bubbleConnectedObj);
 			}
 		}
 	}
@@ -64,7 +98,8 @@ public class GameController{
 			return;
 		Vector3 rowCol = bubbleOnMatrix.GetRowCol();
 		bubbleMatrix.remove("x:" + rowCol.x + ", y:" + rowCol.y);
-		killable.Kill();
+		if(killable != null)
+			killable.Kill();
 	}
 
 	private int destroyBubbles(Hashtable list, GameObject[] neighbours, GameObject parentBubbleObj){
@@ -109,5 +144,42 @@ public class GameController{
 
 	public int GetTotalScore(){
 		return totalScore;
+	}
+
+	public void AddSp (int typeSp)
+	{
+		for(int i=0;i<bubbleSpIn;i++)
+			Debug.Log ("GameController_AddSP bubbleSP["+i+"]="+bubbleSp[i]);
+		if(bubbleSpIn < sizeSp){
+			bubbleSp[bubbleSpIn] = typeSp;
+			bubbleSpIn++;
+		}
+		Debug.Log ("GameController_AddSP bubbleSPIn="+bubbleSpIn);
+	}
+
+	public int GetSp(){
+		if (bubbleSpIn == 0) {
+			return -1;
+		}
+		int toReturn = bubbleSp [0];
+		for(int i=bubbleSpIn-1;i>0;i--){
+			bubbleSp[i-1] = bubbleSp[i];
+		}
+		bubbleSp[bubbleSpIn-1] = -1;
+		for(int i=0;i<bubbleSpIn;i++)
+			Debug.Log ("GameController_AddSP bubbleSP["+i+"]="+bubbleSp[i]);
+		bubbleSpIn--;
+		return toReturn;
+	}
+
+	public int[] hasSp(){
+		return bubbleSp;
+	}
+
+	public void addVisible(BubbleObj a){
+		visibles.Add (a);
+	}
+	public ArrayList getVisibles(){
+		return visibles;
 	}
 }
