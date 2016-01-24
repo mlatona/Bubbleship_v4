@@ -31,7 +31,7 @@ public class ServeCollision : MonoBehaviour
 	{
 		string objICollide = (string)tagCommand [collider.gameObject.tag];
 		if(objICollide != null){
-			Debug.Log ("ServeCollision yo=" + gameObject.tag + " el=" + collider.gameObject.tag);
+			//Debug.Log ("ServeCollision yo=" + gameObject.tag + " el=" + collider.gameObject.tag);
 			Object objCommand = gameObject.GetComponent(objICollide);
 			if(objCommand is ICollideCommand)
 				((ICollideCommand)objCommand).Set(collider);

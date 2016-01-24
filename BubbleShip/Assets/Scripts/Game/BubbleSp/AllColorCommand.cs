@@ -18,10 +18,15 @@ public class AllColorCommand : MonoBehaviour, ICollideCommand {
 			Vector3 pos = GameController.Instance().correctPosition(transform.localPosition, rowCol);
 			transform.localPosition = pos;
 			GetComponent<IMoveable>().SetSpeed(Vector3.zero);
-			foreach(BubbleObj a in GameController.Instance().getVisibles()){
+			ArrayList cpV = (ArrayList)GameController.Instance().getVisibles().Clone();
+			foreach(BubbleObj a in cpV){
 				if(color == a.bubbleColor){
-					Debug.Log(a);
-					GameController.Instance().destroy(a.gameObject);
+					//Debug.Log(a);
+					if(a == null && !ReferenceEquals(a, null)){
+						GameController.Instance().getVisibles().Remove(a);
+					}else{
+						GameController.Instance().destroy(a.gameObject);
+					}
 				}
 			}
 			//Ejecutar sonido

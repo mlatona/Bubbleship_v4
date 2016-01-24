@@ -13,6 +13,7 @@ public class PointerEventsController : MonoBehaviour,IPointerEnterHandler, IPoin
 		//audioclip = Resources.Load <AudioClip> ("button_hover_sound");
 		gameObject.AddComponent<AudioSource> ();
 		audiosource = gameObject.GetComponent<AudioSource> ();
+		audiosource.volume = 1.0f;
 	}
 	
 	public void OnPointerEnter(PointerEventData eventData)

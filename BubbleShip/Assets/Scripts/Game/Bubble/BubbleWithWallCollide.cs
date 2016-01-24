@@ -8,10 +8,8 @@ public class BubbleWithWallCollide : MonoBehaviour ,ICollideCommand {
 	#region ICommand implementation
 	public void Run ()
 	{
-		IMoveable moveable = GetComponent<IMoveable> ();
-		Vector3 speedParam = moveable.GetSpeed ();
-		speedParam.x *= -1;
-		moveable.SetSpeed (speedParam);
+		IKillable killable = GetComponent<IKillable> ();
+		killable.Kill ();
 	}
 	#endregion
 	

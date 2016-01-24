@@ -7,6 +7,7 @@ public class GameController{
 	public static GameController _instance = null;
 
 	static int sizeSp = 3;
+	public int lifes;
 	BubbleMatrix bubbleMatrix;
 	public bool paused = false;
 	int totalScore;
@@ -30,6 +31,7 @@ public class GameController{
 
 	public GameController() {
 		//Debug.Log("Starts GameController ");
+		lifes = 3;
 		bubbleMatrix = new BubbleMatrix ();
 		totalScore = 0;
 		bubbleSp = new int[sizeSp];
@@ -85,7 +87,7 @@ public class GameController{
 				if (bubbleConnectedObj == null) {
 					continue;
 				}
-				Debug.Log (bubbleConnectedObj.name);
+				//Debug.Log (bubbleConnectedObj.name);
 				destroy (bubbleConnectedObj);
 			}
 		}
@@ -148,13 +150,14 @@ public class GameController{
 
 	public void AddSp (int typeSp)
 	{
-		for(int i=0;i<bubbleSpIn;i++)
+		/*for(int i=0;i<bubbleSpIn;i++)
 			Debug.Log ("GameController_AddSP bubbleSP["+i+"]="+bubbleSp[i]);
+			*/
 		if(bubbleSpIn < sizeSp){
 			bubbleSp[bubbleSpIn] = typeSp;
 			bubbleSpIn++;
 		}
-		Debug.Log ("GameController_AddSP bubbleSPIn="+bubbleSpIn);
+		//Debug.Log ("GameController_AddSP bubbleSPIn="+bubbleSpIn);
 	}
 
 	public int GetSp(){
@@ -166,8 +169,9 @@ public class GameController{
 			bubbleSp[i-1] = bubbleSp[i];
 		}
 		bubbleSp[bubbleSpIn-1] = -1;
-		for(int i=0;i<bubbleSpIn;i++)
+		/*for(int i=0;i<bubbleSpIn;i++)
 			Debug.Log ("GameController_AddSP bubbleSP["+i+"]="+bubbleSp[i]);
+			*/
 		bubbleSpIn--;
 		return toReturn;
 	}

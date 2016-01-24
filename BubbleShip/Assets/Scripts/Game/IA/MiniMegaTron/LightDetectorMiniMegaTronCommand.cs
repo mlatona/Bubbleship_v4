@@ -10,7 +10,7 @@ public class LightDetectorMiniMegaTronCommand : MonoBehaviour, ICollideCommand {
 
 		public void Run ()
 		{
-			Debug.Log ("_l_");
+			//Debug.Log ("_l_");
 			gameObject.GetComponentInParent<MiniMegaTronEnemy> ().enemyPos = collider2d.gameObject.transform.localPosition;
 		}
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Damageable : MonoBehaviour, IDamageable{
 
@@ -8,6 +9,9 @@ public class Damageable : MonoBehaviour, IDamageable{
 
 	public void Damage(int damageTaken){
 		life -= damageTaken;
+		if (gameObject.tag == "Player") {
+				GameObject.FindGameObjectWithTag("HP"+life).GetComponent<Image>().sprite = null;
+		}
 		//Debug.Log ("Damageable "+life);
 		//if his life less than 1, and is killable then kill it
 		IKillable killable = gameObject.GetComponent<IKillable> ();

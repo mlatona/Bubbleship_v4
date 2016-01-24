@@ -20,7 +20,7 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 		IMoveable moveable = GetComponent<IMoveable> ();
 
 		IEnemyType otherEnemy = collider2d.gameObject.GetComponent<IEnemyType> ();
-		Debug.Log (enemy.Get()+"-"+otherEnemy.Get());
+		//Debug.Log (enemy.Get()+"-"+otherEnemy.Get());
 		//Bola que impacta con grupo de bolas
 		if (enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()==Enums.OWNER.ANY) {
 			//Debug.Log("BubbleWithBubbleCollide: "+owner.Get().tag);
