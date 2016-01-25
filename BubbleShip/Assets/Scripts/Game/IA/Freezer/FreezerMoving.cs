@@ -25,9 +25,9 @@ namespace Freezer{
 		{
 			timeElapsed += Time.deltaTime;
 
-			if (stateable.transform.localPosition.y < 6 && y < 0)
+			if (stateable.transform.localPosition.y < 16 && y < 0)
 				y = 5;
-			else if (stateable.transform.localPosition.y > 13 && y > 0)
+			else if (stateable.transform.localPosition.y > 23 && y > 0)
 				y = -5;
 			else if (x == 0)
 				x = -5;
