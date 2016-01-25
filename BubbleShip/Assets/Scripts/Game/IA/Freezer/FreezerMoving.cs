@@ -39,6 +39,7 @@ namespace Freezer{
 			//Debug.Log ("-- "+ x +" --");
 			
 			stateable.GetComponent<IMoveable> ().SetSpeed (new Vector3(x,y,0));
+			//[SOUND] freezer se mueve
 
 			RaycastHit2D hit = Physics2D.Raycast(stateable.transform.position-new Vector3(0,3,0), -Vector2.up);
 			if (hit.collider != null) {

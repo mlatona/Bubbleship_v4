@@ -24,5 +24,6 @@ public class VerticalSpeedCommand : MonoBehaviour, ICommand {
 			actualSpeed.y = maxSpeed;
 		}
 		gameObject.GetComponent<IMoveable> ().SetSpeed (actualSpeed);
+		//[SOUND] acelera la nave
 	}
 }

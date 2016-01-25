@@ -11,6 +11,9 @@ public class HorizontalMoveCommand : MonoBehaviour,ICommand {
 	}
 
 	public void Run(){
+		if(tag=="Player"){
+			//[SOUND] Se mueve el player derecha izquierda		
+		}
 		float inputX = Input.GetAxis ("Horizontal");
 		Vector3 actualSpeed = moveable.GetSpeed();
 		actualSpeed.x = inputX * adjust;

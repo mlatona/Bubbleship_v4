@@ -9,7 +9,7 @@ public class Damageable : MonoBehaviour, IDamageable{
 
 	public void Damage(int damageTaken){
 		life -= damageTaken;
-		if (gameObject.tag == "Player") {
+		if (gameObject.tag == "Player" && life>-1) {
 				GameObject.FindGameObjectWithTag("HP"+life).GetComponent<Image>().sprite = null;
 		}
 		//Debug.Log ("Damageable "+life);

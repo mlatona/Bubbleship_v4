@@ -36,6 +36,7 @@ public class MinaCommand : MonoBehaviour, ICollideCommand {
 	}
 
 	private void Destroy(){
+		//[SOUND] mina explota
 		GetComponent<IKillable> ().Kill ();
 	}
 

@@ -33,6 +33,7 @@ namespace MiniMegaTron{
 		{
 			timeElapsed += Time.deltaTime;
 			stateable.GetComponent<IMoveable> ().SetSpeed (direction);
+			//[SOUND] se mueve minimegatron
 		}
 		public IState changeState ()
 		{
