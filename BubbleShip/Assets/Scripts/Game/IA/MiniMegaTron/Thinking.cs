@@ -25,6 +25,7 @@ public class Thinking : IState {
 	public IState changeState ()
 	{
 		if(fire){
+				//[SOUND] te ha detectado minimegatron
 			return new Moving(stateable);
 		}
 		return this;

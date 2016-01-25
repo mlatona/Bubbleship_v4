@@ -28,6 +28,7 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 			gameController.insert (gameObject, true);
 			enemy.Set (Enums.OWNER.ANY);
 			gameController.destroyBubbles (gameObject);
+			//[SOUND] bubble normal toca otras bubbles
 		} 
 		//Bubble enemy that imact with bubble Ship
 		else if(enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()==Enums.OWNER.ISENEMY 

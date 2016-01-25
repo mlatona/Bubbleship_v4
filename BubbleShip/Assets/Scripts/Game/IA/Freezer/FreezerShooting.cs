@@ -22,6 +22,7 @@ namespace Freezer{
 		{
 			if(lastFire>fireTime){
 				fireCommand.Run();
+				//[SOUND] freezer dispara
 				lastFire = 0;
 			}
 			timeElapsed += Time.deltaTime;

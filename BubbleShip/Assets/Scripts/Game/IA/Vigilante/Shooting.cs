@@ -30,6 +30,7 @@ namespace Vigilante{
 		{
 			if(lastFire>fireTime){
 				fireCommand.Run();
+				//[SOUND] dispara el vigilante
 				lastFire = 0;
 			}
 			timeElapsed += Time.deltaTime;

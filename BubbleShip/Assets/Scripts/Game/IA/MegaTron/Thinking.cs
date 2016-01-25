@@ -29,6 +29,7 @@ public class Thinking : IState {
 	{
 		IState newState = new Moving(stateable);
 		if(fire){
+				//[SOUND] estas debajo de megatron
 			newState = new Shooting(stateable);
 		}
 		return newState;

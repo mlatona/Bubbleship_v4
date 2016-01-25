@@ -25,6 +25,7 @@ public class Thinking : IState {
 	public IState changeState ()
 	{
 		if(fire){
+				//[SOUND] te ha detectado vigilante
 			return new Shooting(stateable);
 		}
 			return new Moving(stateable);
