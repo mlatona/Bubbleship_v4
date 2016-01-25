@@ -32,6 +32,7 @@ public class ShipFireCommand : MonoBehaviour,ICommand {
 		objectFire.bubbleColor = actualBubble.bubbleColor;
 		actualBubble.bubbleColor = nextBubble.bubbleColor;
 		nextBubble.bubbleColor = Enums.getRandomBubbleColor ();
+		//[SOUND] dispara la nave
 		fireCommand.Run ();
 	}
 }

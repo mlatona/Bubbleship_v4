@@ -39,6 +39,7 @@ public class ShipSpFireCommand : MonoBehaviour, ICommand{
 			b.transform.parent = gameObject.transform.parent;
 			b.GetComponent<IMoveable> ().SetSpeed (speed);
 			b.GetComponent<IEnemyType> ().Set (Enums.OWNER.ISNOTENEMY);
+			//[SOUND] dispara bola especial la nave
 		}
 	}
 	#endregion

@@ -36,6 +36,7 @@ public class AllColorCommand : MonoBehaviour, ICollideCommand {
 	}
 	
 	private void Destroy(){
+		//[SOUND] allcolor explota
 		GetComponent<IKillable> ().Kill ();
 	}
 	

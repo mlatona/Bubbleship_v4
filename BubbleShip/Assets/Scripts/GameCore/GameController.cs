@@ -14,6 +14,9 @@ public class GameController{
 	int[] bubbleSp;
 	int bubbleSpIn;
 	ArrayList visibles;
+	public float volumeTrack = 1.0f;
+	public float volumeEffects = 1.0f;
+	public int level = 0;
 
 	public static GameController Instance() { 
 		

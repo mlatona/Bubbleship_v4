@@ -29,6 +29,7 @@ namespace Vigilante{
 			} 
 			timeElapsed += Time.deltaTime;
 			stateable.transform.Rotate (vigilante.rotationSpeed*timeElapsed);
+			//[SOUND] se mueve el vigilante
 		}
 		public IState changeState ()
 		{

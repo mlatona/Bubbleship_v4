@@ -29,6 +29,7 @@ public class FreezerThinking : IState {
 	{
 		IState newState = new FreezerMoving(stateable);
 		if(fire){
+			//[SOUND] estas debajo de freezer
 			newState = new FreezerShooting(stateable);
 		}
 		return newState;
