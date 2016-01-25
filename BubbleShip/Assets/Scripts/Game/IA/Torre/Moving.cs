@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace MegaTron{
+namespace Torre{
 
 	public class Moving : IState {
 
@@ -13,7 +13,7 @@ namespace MegaTron{
 
 		public Moving(GameObject stateableParam){
 			stateable = stateableParam;
-			int vel = Random.Range (0, 25);
+			int vel = Random.Range (0, 15);
 			int direction = Random.Range (0, 100);
 			direction = direction>50?-1:1;
 			speed = new Vector3 (vel * direction, 0, 0);
