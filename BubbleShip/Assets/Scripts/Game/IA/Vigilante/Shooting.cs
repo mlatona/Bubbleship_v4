@@ -8,7 +8,7 @@ namespace Vigilante{
 		FireCommand fireCommand;
 		float timeElapsed = 0;
 		float lastFire = 0;
-		float fireTime = 0.7f;
+		float fireTime = 0.5f;
 		float updateRating = 1;
 
 		public Shooting(GameObject stateableParam){
@@ -20,7 +20,7 @@ namespace Vigilante{
 			Vector3 direction = heading / distance;
 			vigilante.enemyPos = Vector3.zero;
 			direction.x *= -10;
-			direction.y *= -4;
+			direction.y *= -10;
 			fireCommand.speed = direction;
 		}
 

@@ -14,7 +14,9 @@ public class DamageCollide : MonoBehaviour,ICollideCommand {
 		if (enemy.Get()==Enums.OWNER.ISENEMY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY
 		    || enemy.Get()==Enums.OWNER.ANY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY
 		    || enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()!=Enums.OWNER.ISNOTENEMY) {
-			GetComponent<IDamageable> ().Damage (collider2d.GetComponent<IDamageable> ().GetDamageTaken ());
+			if(collider2d.GetComponent<IDamageable>().GetLife()>0){
+				GetComponent<IDamageable> ().Damage (collider2d.GetComponent<IDamageable> ().GetDamageTaken ());
+			}
 		}
 	}
 	#endregion

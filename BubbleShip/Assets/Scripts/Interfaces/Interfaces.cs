@@ -44,6 +44,7 @@ public interface IDamageable
 {
 	void Damage(int damageTaken);
 	int GetDamageTaken();
+	int GetLife();
 }
 
 public interface IBubbleMatrix

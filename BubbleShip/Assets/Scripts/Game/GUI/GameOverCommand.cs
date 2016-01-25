@@ -15,6 +15,7 @@ public class GameOverCommand : MonoBehaviour, ICommand {
 		canvas.blocksRaycasts = true;
 		Time.timeScale = 0;
 		GameController.Instance ().paused = true;
+		GameObject.FindGameObjectWithTag ("SoundController").GetComponent<SoundController> ().PlayGameOver ();
 	}
 
 	#endregion
