@@ -1,0 +1,31 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SoundController : MonoBehaviour {
+
+	public AudioClip bubbleMismoColor;
+	public AudioClip bubbleDistintoColor;
+	public AudioClip bubbleExplotaEnemigo;
+	public AudioClip bubbleDisparadaShip;
+	public AudioClip explosion1seg;
+	public AudioClip explosion3seg;
+	public AudioClip gameOver;
+	public AudioClip gameWin;
+
+	AudioSource audioSource;
+
+
+	// Use this for initialization
+	void Start () {
+		audioSource = gameObject.GetComponent<AudioSource> ();
+		audioSource.volume = GameController.Instance ().GetVolumeEffects ();
+	}
+	
+	public void PlayBubbleMismoColor(){
+		audioSource.PlayOneShot (bubbleMismoColor);
+	}
+
+	public void PlayBubbleDisparadaShip(){
+		audioSource.PlayOneShot (bubbleDisparadaShip);
+	}
+}

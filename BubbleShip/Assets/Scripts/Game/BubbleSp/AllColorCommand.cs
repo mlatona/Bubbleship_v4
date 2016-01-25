@@ -29,14 +29,13 @@ public class AllColorCommand : MonoBehaviour, ICollideCommand {
 					}
 				}
 			}
-			//Ejecutar sonido
-			
+
+			GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>().PlayBubbleMismoColor();
 			Invoke ("Destroy", killTimeOutSeconds);
 		}
 	}
 	
 	private void Destroy(){
-		//[SOUND] allcolor explota
 		GetComponent<IKillable> ().Kill ();
 	}
 	

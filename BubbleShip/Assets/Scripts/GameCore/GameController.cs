@@ -15,8 +15,12 @@ public class GameController{
 	int bubbleSpIn;
 	ArrayList visibles;
 	public float volumeTrack = 1.0f;
-	public float volumeEffects = 1.0f;
+	float volumeEffects = 1.0f;
 	public int level = 0;
+
+	public float GetVolumeEffects(){
+		return volumeEffects;
+	}
 
 	public static GameController Instance() { 
 		
