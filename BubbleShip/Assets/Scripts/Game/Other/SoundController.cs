@@ -11,6 +11,7 @@ public class SoundController : MonoBehaviour {
 	public AudioClip explosion3seg;
 	public AudioClip gameOver;
 	public AudioClip gameWin;
+	public AudioClip bethoven;
 
 	AudioSource audioSource;
 	AudioSource soundTrack;
@@ -40,5 +41,13 @@ public class SoundController : MonoBehaviour {
 
 	public void FinalScene(){
 		audioSource.PlayOneShot (gameWin);
+	}
+
+	public void PlaySoundTrack(){
+		audioSource.PlayOneShot (bethoven);
+	}
+
+	public void Stop(){
+		audioSource.Stop ();
 	}
 }
