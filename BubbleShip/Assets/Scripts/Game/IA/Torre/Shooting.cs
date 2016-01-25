@@ -1,27 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Vigilante{
+namespace Torre{
 	public class Shooting : IState {
 
 		readonly GameObject stateable;
 		FireCommand fireCommand;
 		float timeElapsed = 0;
 		float lastFire = 0;
-		float fireTime = 0.5f;
+		float fireTime = 0.2f;
 		float updateRating = 1;
 
 		public Shooting(GameObject stateableParam){
 			stateable = stateableParam;
 			fireCommand = stateable.GetComponent<FireCommand> ();
-			VigilanteEnemy vigilante = stateable.GetComponent<VigilanteEnemy> ();
-			Vector3 heading = stateable.transform.position - vigilante.enemyPos;
-			float distance = heading.magnitude;
-			Vector3 direction = heading / distance;
-			vigilante.enemyPos = Vector3.zero;
-			direction.x *= -10;
-			direction.y *= -10;
-			fireCommand.speed = direction;
 		}
 
 		#region IState implementation
@@ -30,7 +22,6 @@ namespace Vigilante{
 		{
 			if(lastFire>fireTime){
 				fireCommand.Run();
-				//[SOUND] dispara el vigilante
 				lastFire = 0;
 			}
 			timeElapsed += Time.deltaTime;

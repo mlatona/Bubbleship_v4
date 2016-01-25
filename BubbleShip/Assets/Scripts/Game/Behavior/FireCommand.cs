@@ -14,6 +14,7 @@ public class FireCommand : MonoBehaviour, ICommand {
 
 	public void Run(){
 		Enums.BUBBLECOLOR a = objectFire.GetComponent<BubbleObj>().bubbleColor;
+		objectFire.GetComponent<IEnemyType> ().Set (enemyType);
 		GameObject b = 
 			Instantiate(objectFire, transform.position + added, transform.rotation) as GameObject;
 		b.GetComponent<BubbleObj> ().bubbleColor = a;

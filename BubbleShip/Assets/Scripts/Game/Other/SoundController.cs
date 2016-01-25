@@ -13,6 +13,7 @@ public class SoundController : MonoBehaviour {
 	public AudioClip gameWin;
 
 	AudioSource audioSource;
+	AudioSource soundTrack;
 
 
 	// Use this for initialization
@@ -27,5 +28,17 @@ public class SoundController : MonoBehaviour {
 
 	public void PlayBubbleDisparadaShip(){
 		audioSource.PlayOneShot (bubbleDisparadaShip);
+	}
+
+	public void PlayBubbleDistintoColor(){
+		audioSource.PlayOneShot (bubbleDistintoColor);
+	}
+
+	public void PlayGameOver(){
+		audioSource.PlayOneShot (gameOver);
+	}
+
+	public void FinalScene(){
+		audioSource.PlayOneShot (gameWin);
 	}
 }

@@ -78,7 +78,7 @@ public class GameController{
 		}
 	}
 
-	public void destroyBubbles(GameObject bubbleObj){
+	public bool destroyBubbles(GameObject bubbleObj){
 		//get neighbours and destroy if its necesary
 		Hashtable sameColorConeectedBubbles = new Hashtable ();
 		IBubbleMatrix bubbleScript = bubbleObj.gameObject.GetComponent<IBubbleMatrix> ();
@@ -98,6 +98,7 @@ public class GameController{
 				destroy (bubbleConnectedObj);
 			}
 		}
+		return sameColor > 2;
 	}
 
 	public void destroy(GameObject bubbleObj){

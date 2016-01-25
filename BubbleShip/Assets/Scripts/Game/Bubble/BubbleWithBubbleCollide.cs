@@ -27,13 +27,18 @@ public class BubbleWithBubbleCollide : MonoBehaviour ,ICollideCommand {
 			moveable.SetSpeed (Vector3.zero);
 			gameController.insert (gameObject, true);
 			enemy.Set (Enums.OWNER.ANY);
-			gameController.destroyBubbles (gameObject);
-			//[SOUND] bubble normal toca otras bubbles
+			bool del = gameController.destroyBubbles (gameObject);
+			if(!del){
+				GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>().PlayBubbleDistintoColor();
+			}else{
+				GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>().PlayBubbleMismoColor();
+			}
 		} 
 		//Bubble enemy that imact with bubble Ship
 		else if(enemy.Get()==Enums.OWNER.ISNOTENEMY && otherEnemy.Get()==Enums.OWNER.ISENEMY 
 		        || enemy.Get()==Enums.OWNER.ISENEMY && otherEnemy.Get()==Enums.OWNER.ISNOTENEMY){
 			damageable.Damage(collider2d.gameObject.GetComponent<IDamageable>().GetDamageTaken());
+			GameObject.FindGameObjectWithTag("SoundController").GetComponent<SoundController>().PlayBubbleDistintoColor();
 		}
 	}
 	#endregion
