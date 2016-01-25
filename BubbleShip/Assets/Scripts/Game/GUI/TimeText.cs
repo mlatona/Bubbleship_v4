@@ -17,17 +17,17 @@ public class TimeText : MonoBehaviour {
 	void Start () {
 		maxTimeCommand = (ICommand)gameObject.GetComponent (maxTimeNameCommand);
 		alertTimeCommand = (ICommand)gameObject.GetComponent (alertNameCommand);
-		timeElapsed = 0;
+		timeElapsed = maxTimeSeconds;
 		text = GetComponent<Text> ();
 		text.text = "000";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timeElapsed += Time.deltaTime;
+		timeElapsed -= Time.deltaTime;
 		//Debug.Log (timeElapsed);
 		text.text = string.Format("{0:D3}", Mathf.FloorToInt(timeElapsed));
-		if(maxTimeSeconds<timeElapsed){
+		if(0>timeElapsed){
 			if (maxTimeCommand != null) {
 				maxTimeCommand.Run ();
 			}
